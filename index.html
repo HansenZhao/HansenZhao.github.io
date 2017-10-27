@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/HansenZhao.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/HansenZhao.github.io/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/HansenZhao.github.io/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/HansenZhao.github.io/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/HansenZhao.github.io/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/HansenZhao.github.io/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Machine Learning &amp; Coding">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HansenZhao&#39;s Blog">
+<meta property="og:url" content="https://hansenzhao.github.io/index.html">
+<meta property="og:site_name" content="HansenZhao&#39;s Blog">
+<meta property="og:description" content="Machine Learning &amp; Coding">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HansenZhao&#39;s Blog">
+<meta name="twitter:description" content="Machine Learning &amp; Coding">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/HansenZhao.github.io/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hansenzhao.github.io/"/>
+
+
+
+
+
+  <title>HansenZhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/HansenZhao.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HansenZhao's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">| Share with ZhuangBiology</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/HansenZhao.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/HansenZhao.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/10/27/Fun-with-your-first-Day-with-Matlab-S01E03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/10/27/Fun-with-your-first-Day-with-Matlab-S01E03/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T21:46:51+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="元胞"><a href="#元胞" class="headerlink" title="元胞"></a>元胞</h4><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><h4 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h4><h3 id="脚本的执行顺序控制"><a href="#脚本的执行顺序控制" class="headerlink" title="脚本的执行顺序控制"></a>脚本的执行顺序控制</h3><h4 id="顺序执行"><a href="#顺序执行" class="headerlink" title="顺序执行"></a>顺序执行</h4><h4 id="if-else-判断语句"><a href="#if-else-判断语句" class="headerlink" title="if-else 判断语句"></a>if-else 判断语句</h4><h4 id="switch-case分支语句"><a href="#switch-case分支语句" class="headerlink" title="switch-case分支语句"></a>switch-case分支语句</h4><h4 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h4><h4 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h4><h3 id="MATLAB中的函数"><a href="#MATLAB中的函数" class="headerlink" title="MATLAB中的函数"></a>MATLAB中的函数</h3><h4 id="创建函数文件"><a href="#创建函数文件" class="headerlink" title="创建函数文件"></a>创建函数文件</h4><h4 id="编写第一个函数"><a href="#编写第一个函数" class="headerlink" title="编写第一个函数"></a>编写第一个函数</h4><h4 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h4><h3 id="完善项目"><a href="#完善项目" class="headerlink" title="完善项目"></a>完善项目</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/05/26/科学范式与数据科学/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/05/26/科学范式与数据科学/" itemprop="url">科学范式与数据科学</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-26T22:56:07+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/General-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">General Science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>清华大学大数据分析（B）朱文武</p>
+<h3 id="科学"><a href="#科学" class="headerlink" title="科学"></a>科学</h3><p>对自然的观察？ 肉眼观察 -&gt; 仪器观察 -&gt; 数据观察（大量仪器）<br>归纳与推理     哲学归纳 -&gt; 数学与物理归纳 -&gt; 建模归纳<br>应用与推广<br>因果关系——关联关系     </p>
+<ul>
+<li>start from model to data improvement</li>
+<li>start from data to model implementation<br>#### </li>
+<li>数据驱动/数据决策（data-driven)</li>
+<li>模型驱动/经验决策 (model-driven)<h3 id="实验科学（古希腊时代）"><a href="#实验科学（古希腊时代）" class="headerlink" title="实验科学（古希腊时代）"></a>实验科学（古希腊时代）</h3>观察与实验<h3 id="理论科学（西方近代）"><a href="#理论科学（西方近代）" class="headerlink" title="理论科学（西方近代）"></a>理论科学（西方近代）</h3>物理模型<h3 id="计算科学（现代）"><a href="#计算科学（现代）" class="headerlink" title="计算科学（现代）"></a>计算科学（现代）</h3>数学模型构建——定量分析——仿真模拟<h3 id="数据科学？"><a href="#数据科学？" class="headerlink" title="数据科学？"></a>数据科学？</h3>理论+实验+计算？<h3 id="computational-thinking"><a href="#computational-thinking" class="headerlink" title="computational thinking"></a>computational thinking</h3></li>
+<li>data -&gt; knowledge -&gt; intelligence -&gt; decision<br>37度    人体正常温度36度~37度    不算发烧    不用去医院</li>
+<li>数据如何变成知识？ 数据的可解释性（find-defined)</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/05/26/科学与复杂性-Science-and-Complexity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/05/26/科学与复杂性-Science-and-Complexity/" itemprop="url">科学与复杂性(Science and Complexity)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-26T22:56:07+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/General-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">General Science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Translated from: Warren Weaver, Science and Complexity, American Scientist, 1948</p>
+<p>科学在过去已经获得了大量的研究成果，并且影响着人们的生活。其中一些只是在琐碎的事情上提供了方便，但是更多的科学成果构建了我们今天（1948年）的现代社会，还有一些，尤其是那些与生物医药相关的成果，无可置疑的提高了我们的生活质量；更有一些结论深刻的改变了我们看待事物的思想。<br>我们应该如何看待科学在未来人类发展中的作用？科学到底是什么，或者同等重要的，不是什么？当然，我们可以从哲学的角度讨论这个问题，在某种意义上，这样的讨论也是非常重要和必要的，不过我们现在用一种更直接的方法来讨论。就像某些政客说的那样，让我们来看看（科学发展的）历程。我们将会忽略非常早期的一些探索故事，从三个半世纪以前开始，忽视一些细节，来考察科学发展过程中的主导的趋势。让我们从物理学开始，到后面在谈到生物学。</p>
+<h4 id="朴素问题（Problem-of-Simplicity"><a href="#朴素问题（Problem-of-Simplicity" class="headerlink" title="朴素问题（Problem of Simplicity)"></a>朴素问题（Problem of Simplicity)</h4><p>大致来说，17世纪到19世纪这段时期物理学开始使用“变量”的概念，并且由此发展出了电话，无线电，汽车，飞机，照相以及电影等技术。<br>于此同时在生物学和医药学上面的进展也是令人印象深刻的。然而，有关生命活动的问题很少想物理学中的问题一样，仅仅涉及一到两个变量和一系列假定的常数。有机体更多的情况下包含了数十个同时变化的量，并且这些变量相互之间有微妙的联系。通常在生物学的研究中，很多重要的变量并没有被定量的测定，而是使用了定性的说明和度量，因此，直到1900年左右，生命科学的研究仍然停留在科学研究的初步阶段——包括采集，描述，分类以及对于显著存在的相关性的观察和描述。这些只是定量的理论发展之初的勇敢尝试，甚至很少讨论产生生物现象的物理化学机理。<br>总体来说，20世纪前的物理学大部分只是涉及到一两个变量作用和变化的朴素问题。同时，朴素问题极少适用的生命科学还尚未被定量的分析。</p>
+<h4 id="混乱复杂问题"><a href="#混乱复杂问题" class="headerlink" title="混乱复杂问题"></a>混乱复杂问题</h4><p>如果有人把Josiah Willard Gibbs作为研究混乱复杂问题的英雄先驱的话，比1900年更早一些，他已经开始对自然中一种全新的体系发起了进攻。相比于之前对于几个变量的体系的研究，Gibbs富有创造性的研究了自然的另一个极端，并说：“让我的发展一套研究二十亿个变量的分析方法吧！”。也就是说，物理学家，通常以数学家为先锋，开始发展了一套基于概率统计的处理混乱复杂体系的工具。<br>什么是混乱复杂问题呢？想象这样一幅物理图景来感觉一下这样的体系。经典的19世纪动力学擅长于研究和描述一个象牙球在台球桌上的运动。实际上，象牙球在台球桌上的运动位置与时间的关系是非常经典的朴素问题研究体系。人们可以研究更多的象牙球在桌上共同运动的情形，不过随着球的数量的增多，问题的复杂度也在极具的上升。事实上，确实有人研究过标准台球比赛中象牙球的运动行为，尽管在理论上是可行的，但是当你同时研究10到15个球的运动行为时，实际需要的大量人力劳动将使得这项研究无法实行（译者：1948年计算机尚处于萌芽阶段）。<br>想象一下，一个巨大的台球桌上包含了上十亿个台球在滚动，相互碰撞，令人惊奇的是这样的体系反而因为统计学可以应用其中而变得容易研究了。尽管单个的球体的运动轨迹无法被追踪，但是很多有用的问题可以得到解答，譬如说：平均每秒有多少球与球台边缘碰撞？平均每个球在碰到其他球之前运动了多远的距离？平均每个球每秒受到多少次撞击？<br>早些时候我们说这种新的统计方法可以适用于“混乱复杂体系”，数十亿个台球在球桌上运动的问题为什么可以描述为“混乱复杂体系”呢？这种统计的方法适用的前提是球的运动为位置的随机的，也就是“混乱”的。譬如，如果我们将所有的球都放置在一行之上并且让他们严格的平行于竖列运动，这些球将永远无法相互以及与竖列的边沿碰撞，统计的方法也就不再适用了，这个体系也不是“混乱复杂体系”了。<br>从上面描绘的图景中我们清楚的认识了混乱复杂体系的意义。这类问题具有大量的变量，并且其中的变化是混乱的，甚至是完全不可预测的。但是，尽管其混乱性非常强，但是体系整体的行为是有规律的，其平均性质是可以解析的。<br>大量的实际体系可以归结为混乱复杂体系，其方法的准确性随着体系数量的增长而提高。在大量电话线路交换的预测平均拨号频率，以及相同拨号冲突的概率等问题中，这样的方法被证明是有效的。这种方法同样也确保了生命保险公司的财务稳定，尽管保险公司并不知道每个投保人的生活状况，但是公司可以了解群体的平均死亡率。<br>最后，重要而且有趣的一点是，统计方法学并不是完全依照理论中对每个个体行为完全理解的基础上应用的。在前面的台球桌的例子中，牛顿力学可以完美的解释和预测台球的碰撞行为。但是在保险公司的例子中，个体的行为（死亡率）实际上是受到一系列复杂因素影响的，因而是不可知的。<br>尽管保险公司以及电话线路的例子展现了统计学的实际应用前景，但在某种程度上，这些并不是很好的例子，因为这些例子使得人们忽视了统计学在更基础的自然科学中的应用和贡献。从组成物质的原子运动到组成宇宙的星体的运动都使用统计学进行研究。遗传理论应用了统计学分析，描述一些物理体系发展运动方向（孤立体系熵增）的热力学定律是通过统计学推导而出的。现代物理的架构，我们对自然世界的物理规律，以及目前获得的实验观测数据都是建立在统计学的概念上的。实际上，观测结果以及对观测结果的推论都是建立在统计思想上的，因此概率的思想构成了知识和理论本身。</p>
+<h4 id="有序复杂问题"><a href="#有序复杂问题" class="headerlink" title="有序复杂问题"></a>有序复杂问题</h4><p>强大的统计学工具相比于处理一两个变量的朴素问题的方法有了很大的提升，但是却留下了很大一部分未探索的情形。研究者常常试图过分的简化问题，声称科学的研究体系不是只有一两个变量的朴素简单体系就是具有天文数量变量的混乱复杂体系，然后忽略很大一部分的中间地带。 这个中间地带为什么重要呢？并不是因为这部分涉及的变量数目比三两个要多，而又比一小撮盐当中的原子数目要少。对于这部分科学尚未涉足的中间地带，真正重要的特征是他们呈现出一种有秩序的特征————与前述的统计学支配的无序复杂体系不同————因此我们又可以称这部分问题为有序复杂问题(Organized complexity)。<br>月见草(primrose)因何而开？为什么盐水不能止渴？为什么一支菌株可以合成某种化学物质而另一支却不行？为什么一种有毒的物质的镜像对映体却是无毒的？ 为什么饮食中的锰元素含量会影响动物的母性行为？ 如何从生物的角度解释衰老？ 还有下面这些问题的研究会有什么意义呢： 病毒是否是“活”的？ 基因是什么？基因是如何靠表达自身指导生物发育的？ 复杂的蛋白组装体是否“指导”如何复制自身？这与生物体的繁殖有关么？ 所有这些问题都是一类复杂的问题，但却不是统计学支配的无序复杂的(disorganized complexity), 他们是关于一类有大量相互作用的变量共同形成的有机整体的问题，他们都是我这里所说的，有序复杂问题(organized complexity)。<br>小麦的价格与什么相关呢？这也是一个有序复杂问题。很多变量与之相关，并且这些变量也是相互关联形成一个复杂的整体的。<br>经济体系是如何维持稳定的呢？ 依赖于供需平衡的经济体系有多安全呢？ 应该多大程度上应用调控使得经济不至于波动太大？这些问题也是关于复杂体系的问题，因为研究的体系是一个有机的整体，其中的每一部分斗都与其他部分紧密相关。<br>我们该如何解释一个群体例如一个实验室的人员，一群工人或者一个种族的行为模式呢？显然很多因素在这其中起作用，然而使用数学平均的方式来描述它是不够的。 给定一个国家一定可以消耗的资源，采用什么样的策略才更可能获得战争的胜利？ 或者另一方面，放弃多少自私的欲望将更有效的保持世界的和平？<br>这些问题，以及一系列类似关于生物，医药，心理，经济以及政治科学的问题，对于19世纪流行的处理三两个变量的经典理论来说太复杂了。同样的，也不能被广泛应用在处理无序混乱体系中的统计学解释。<br>这些问题又与世界发展的未来如此相关，以至于要求科学进行第三次革命，比19世纪学会处理三两个变量的革命，以及20世纪学会处理无序混乱体系的革命更为重要。科学界必须在今后的50年里学会处理有序复杂体系。<br>目前又什么能确保这样的革命可以完成呢？ 有一些曙光确实存在，存在于这样一个事实：全世界数百名学者已经开始在思考这些问题了。 物理学中使用的定量实验的方法以及数学分析的工具从未有过的被应用在生物学，医学甚至是社会学的研究中。 目前获得的成果尽管是零散的，但却十分可信。 与25年前相比，我们在生物学中的癌症研究已经获得了更加清晰的图景。无疑我们对癌症的认识还是肤浅的，但我们已经发展了一些研究工具并且基本肯定了一些关键问题之所在。 我们知道一些癌症类型是可以被某种化学品诱发的，了解了一些类型的癌症的遗传易感性。原子物理发展出了百万伏甚至更强的射线。 发射性元素可以用来进行基础研究以及治疗。 科学家正在面对生物体中最为复杂的生化过程。 对于正常细胞的了解将有助于我们识别病态的细胞，尽管距离这个目标还很遥远，至少我们已经在解决问题的路上了。<br>除了上述的正在发展的可能解决问题的方向，还有至少两个很可能有助于我们发展的特别的事情。 罪恶的战争最终留下了帮助我们解决复杂问题的曙光。<br>其中之一即是在战争时期发展的电子计算机，这种装置的灵活性和可用性更类似于人类的大脑而不是传统的机器。它们具有存储大量信息的“记忆”，它们也可以被“指示”去独自完成复杂的科学计算。它计算十位数乘法的速度比人脑快4万倍。 灵活性，可用性以及快速性的集合使得它将对科学的发展产生巨大的影响。 它们使得过去过于复杂的问题能够得到解决，更重要的是，它将促成新的分析复杂体系的方法的建立。<br>第二个战时产生的进步是建立“多元化团队(mixed-team)”来解决问题。 尽管在未军方进行数学计算的人已经非常熟悉这个名词了，但我还是要介绍一番。<br>想象这样一个场景，为大西洋上的目标提供护航以及补给，考虑可以使用的舰艇数量，潜艇攻击能力以及其他可量化的和不可量化的因素。 如何组织才是最好的方案？综合考虑到速度，安全性，经济性等指标？ 护航编队应该是大是小？速度要快还是慢？ 他们应该迂回前进还是直线前进？ 应该如何组织，如何防御才是最好的？ 什么样的组织和架构形式才能更好用于巡防和攻击？<br>试图去回答这些宽泛的战术问题的工作团队就是运作分析团队(operations analysis groups)。 从英国开端，在纳粹的反潜艇作战以及陆军防空队中大放异彩，这样的运作分析团队更多的被称为“多元化团队”。 尽管数学家，物理学家以及工程学家都是必要的，实际上最好的交叉团队包含了心理学家，生化学家，生理学家以及多种生物医药以及社会学方面的代表性任务。 例如在优秀的英国多元化团队中，就包含了内分泌专家和X射线晶体学家。 在战争的压力下，这些交叉团队在同一个普遍性的问题上施展了队员各自不同角度的才华。 尽管现代科学有专业分工增强的趋势，但是最终人们发现在多元化团队中的人可以共同工作并且形成一个整体效用大于所有人之和的组织。 实践证明这样的团队可以针对一个复杂性问题进行研究并且获得有用的解答。<br>预测在未来50年将会实现的科学的巨大进步中，将会有交叉团队的贡献，就像他们在战时做的那样。计算机的发展更会提高他们的效率。 但是，并不能认为这就是未来科学工作的方式。 一定会有那种只有在独立的环境下才能保持思维的自由的科学家，那样的人一定会独立工作。 前者则是更“美国”的做事方式。 不同方式之间的竞争将是有益的，所以这里并没有一定要描绘一幅所有科学家都在同样的体系下工作。这里仅仅是建议一些学者可以寻求一种新的合作方式，在团队中包含所有必要领域的专家，这样一种新的工作方式，在计算机的帮助下，将为后半个世纪发展解决复杂生物和社会学问题的方法提供帮助。</p>
+<h4 id="科学的界限"><a href="#科学的界限" class="headerlink" title="科学的界限"></a>科学的界限</h4><p>让我们会到最初的问题，什么是科学？什么不是科学？我们希望从科学获得什么？<br>科学显然是解决问题的一种方法————并不是所有的问题，但是是很大一部分重要的和实践性的问题。科学可以处理的问题是那些影响的主要因素是符合逻辑的基本规律，常常还是可以度量的问题。科学是这样的可重现的知识的集合，是专注与训练想象力，是权衡证据，是确定哪些现象是相关的，哪些是无关的，是验证假设，是丢失可能不准确的数据，是阐述，是面对事实，是让自然的真相服务于人类。<br>科学的本质并不是其外在的表现，不是其物理现象，而在于其内核的精神。 那些朴素却令人激动的探究方式也就是人们常说的科学方法。 科学的方法要求实施者诚实守信，头脑开放，视野聚焦以及热爱真理。 这些都是可贵的品质，但是科学却并不完全依赖它们，诗人往往也有同样的品质，并且将它们用在更纯高的地方。<br>科学已经在解决逻辑和定量问题上获得了极大的成功。事实上，这类成功实在是太多太伟大了，以至于失败的结果极少被公开发布，以至于普通的人一定觉得科学是人类完成的最伟大的事业。事实上，这样的看法的确有一点道理。<br>我们取得的成就大伟大了，以至于科学家没有理由走出固有的工作方式。 但我们必须清醒的认识到，尽管很多简单的问题已经被科学解决，还有很多复杂的，与人类未来相关的问题，任然摆在我们面前。<br>因此，我们必须停止认为科学永远是解决简单问题的成果的方法。这在某种程度上意味着我们不在把科学当做手中摆弄的小玩意儿，也不能认为科学史现代的可以掌控任何事的黑魔法。<br>我认为所有科学家都会对科学在未来为人类福祉作出巨大贡献怀有信心。科学将会继续认识物理，了解自然法则，学会预测以及调控，创造新的物质攻人们使用或者娱乐。 科学将会继续帮助我们认识动物的本性，提高健康水平，延长寿命以及更加了解人类的行为。实际上，我认为有追求的科学家还“得寸进尺”的希望这种精确的，客观的分析手段可以应用于过去极少涉足的社会学以及政治学的领域。<br>甚至更进一步的，由于科学本身的特质，科学家坚持使用精确定义的术语以及明确阐述的问题进行交流。尽管在科学领域确实更容易获得清晰的定义，但是实际上科学的语言在表意的有效性上压倒一切自然语言，意识以及传统。 这种普适性对于跨域时空限制，跨越政治以及文化的界限是非常重要的。可能科学本身比任何有智慧的人更能够解决意识交流的问题，得到世界范围内的合作，分享以及获得科学成果。<br>是的，科学是一种强大的工具，获得了巨大的成功。然而谦逊和明智的科学家不会期待科学可以解决任何问题。 他记得科学教会我们重视特殊的情况，他不认为任何一个社会，经济或者政治问题会因为“科学家”的介入而自行解决，他不期待——也许有些例外——科学可以提供道德和美学的基准。他不期待科学能够度量或者控制人类的爱，纯真，价值观以及信仰。人生之中有太多无形的难以衡量的感性存在，它们是无法在显微镜下观测的，无法在天平上称量的，无法被最灵敏的话筒记录。<br>如果科学只是关于定量的逻辑的问题的话，如果科学不去关注价值以及目标，那么现代的有科学素养的人如何获得平衡的幸福生活？逻辑是美感的伙伴，效率是一种美德。<br>答案或许是简单的，那就是让我们的精神匹配我们的技术。为什么要这样呢？使得我们驾驭力量的智慧与我们所拥有的力量匹配需要多方面的努力。我们必须加强对个体以及群体行为的理解，必须加强不同语言和文化背景的人之间的交流，必须使用同样的规范分享我们的观点。我们对影响政治和经济的因素的理解必须有飞跃式的加深，必须建立起牺牲个人甚至民族的短期的自私的利益以换取对整个人类长期的贡献的意愿。<br>这些提升需要建立在对科学到底是什么的理解上，建立在科学不可避免的展现出强大的影响力的世界中。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/05/01/Fun-with-your-first-Day-with-Matlab-S01E02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/05/01/Fun-with-your-first-Day-with-Matlab-S01E02/" itemprop="url">Fun with your first daty with Matlab S01E02</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-01T23:32:35+08:00">
+                2017-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/MATLAB/" itemprop="url" rel="index">
+                    <span itemprop="name">MATLAB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h3><p>上一节当中我们说到了如何使用MATLAB作为高级的计算器，事实上，数据处理的过程就是对“数字”进行计算从而获取有意义的信息的过程。理论上来讲，如果时间足够多，我们就可以使用计算器手工计算处理任何的数据。然而，这种方式太过繁琐，如果要处理成千上万条数据记录，还不是要被累死!更重要的是，处理这些数据的方法大多数情况下都是固定的，重复的。对于这种由明确定义的，固定的，重复的工作，交给计算机程序来做真是最好不过了。幸运的是，有很多数据处理的任务都是这样的。使用计算机语言批量的执行任务，我们需要写“脚本”。脚本(Script)就是一组指令，写好以后计算机会按照顺序依次执行，而不需要有人在一旁看管，实在是非常方便。那么我们就开始学习如何写MATLAB的脚本吧！</p>
+<h3 id="MATLAB中的数据类型"><a href="#MATLAB中的数据类型" class="headerlink" title="MATLAB中的数据类型"></a>MATLAB中的数据类型</h3><p>数据类型是计算机程序中非常重要的概念。计算机工作的原理就是对数据进行操作，因此数据类型应该是非常基础和重要的东西啦！学过C语言的同学可能还记得，C语言中有整形变量(int:0,1,2,3…), 单精度浮点类型(float:1.0,1.2….)等等数据类型。像C语言这样的，在声明变量之前，首先要声明变量类型的语言，被称为【强类型语言】。例如<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">0</span>;<span class="comment">//声明变量i为整型变量，初始值为0</span></div></pre></td></tr></table></figure></p>
+<p>MATLAB的脚本语言，在声明变量的时候并不需要声明类型，而是由解释器（将MATLAB脚本进一步解释为计算机能够理解的指令的东西）决定变量的类型，这样的语言被称为【弱类型语言】。最近火热的Python也是弱类型语言哦。弱类型语言实际上是方便使用者，也就是编程人员，的一项设计。不过相比与类型严格的强类型语言，在使用弱类型语言的时候，有可能会渐渐忘记或者搞混变量的类型，引发程序错误。如果错误在运行时被发现的话，还是很好的。可是，如果在运行时因为类型错误而进行了错误的计算，解释器并没有因此报告错误的话，是可能使处理出来的数据完全没有意义的。因此，在完成复杂的程序编写以后进行测试以便确定算法的正确性是一个非常重要的好习惯。为了保持这样的习惯，你需要在下意识里“质疑”自己写的程序。</p>
+<h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><p>上一节我们讲到，MATLAB可以被认为是Matrix Lab的缩写，可见，矩阵在MATLAB中的重要地位。 矩阵可以类比于C语言中的数组，是包含一组<strong>同类</strong>数据的<strong>容器</strong>。【容器】在计算机术语里面称为Container。正如其名，是包含一组数据的结构。MATLAB中的矩阵的特点是只能包含同类型的数据，除了数学上的数字以外，还可以包含字符串，引用等等。矩阵的数据结构还可以让我们轻易的进行高效的矩阵运算，如矩阵乘法，转置，求逆等等。使用矩阵的思维进行数据处理，还可以大大加快程序运行的速度，这样的技术被称为“向量化”。我在自己的工作中，超过一半的计算都是通过矩阵进行的。</p>
+<h5 id="矩阵基础"><a href="#矩阵基础" class="headerlink" title="矩阵基础"></a>矩阵基础</h5><p>矩阵是有【维度】的，这个维度就是指矩阵的大小。在MATLAB中，我们可以通过size函数获取矩阵的大小。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">x = <span class="built_in">rand</span>(<span class="number">5</span>); <span class="comment">%创建5x5的矩阵</span></div><div class="line">[nr,nc] = <span class="built_in">size</span>(x)</div><div class="line">nr = </div><div class="line"><span class="number">5</span></div><div class="line">nc = </div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p>上面的代码中我们使用rand函数创建了一个5x5的随机数矩阵，使用size函数可以获取矩阵的行数和列数。值得注意的是，在编写程序或者脚本的时候，变量的命名非常重要。因为程序是写给人看的，而不是给计算机看的。因此，使用良好的变量命名规范，可以使得程序的【可读性】变得更好，方便自己和他人阅读程序。这里，nr和nc是常用的矩阵大小变量命名，是number of row以及number of column的缩写。不同的语言的变量命名也不尽相同，Python的变量命名非常喜欢使用下划线_，因此，同样含义的变量可能会被命名为num_row以及num_col。如果我们希望只得到矩阵的行数，可以使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nr = <span class="built_in">size</span>(x,<span class="number">1</span>);</div><div class="line">[nr,~] = <span class="built_in">size</span>(x);</div></pre></td></tr></table></figure></p>
+<p>这两种写法。其中，第一种写法使用了size函数的可变参数的功能。可变参数是指一个函数可以输入多种可能数量的参数，并因此而改变函数的行为。MATLAB中大多数函数都是有可变数量参数的，这样设计的目的是为了既保证函数调用的简洁性，又保持函数调用的灵活性。<br>怎么理解呢？譬如说我们现在有一个add函数，作用是给传入的参数加上一个值。我们在使用的过程中发现，大多数情况下，我们都是给传入参数加上1的，因此，我们可以把add函数设计为一个可变参数的函数。当调用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">add(x);</div></pre></td></tr></table></figure></p>
+<p>时，函数的行为是返回x+1的值。当调用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">add(x,a)</div></pre></td></tr></table></figure></p>
+<p>时，函数的行为是返回x+a的值。这样在大多数情况下我们都可以按照前者的方式调用函数，非常的简洁方便。可是我们需要使用add函数提供的更灵活的功能时，例如加上a，我们又可以按照后者的方式进行调用。这就是所谓的既保证函数调用的简洁性，又保持函数调用的灵活性，是不是很方便呢？在这个例子里，add函数的第一个参数是必要的，否则就不知道在谁的基础上做加法了。第二个参数是可选参数，可以指定，如果没有指定就使用默认值。<br>size函数调用的第一种写法中第二个参数1就是可选的参数。它代表传入的矩阵的轴的次序。1是指列，2则是指行。在matlab中的矩阵，因为常常与数据处理相关，因此矩阵的行往往表示<strong>观测结果</strong>，列往往表示<strong>观测的维度</strong>。譬如我们对小学生早晨上学这个事情进行观测，那么默认我们的数据集矩阵的行是上学的每一个小学生，列则是相应学生的身高，体重等等信息。<br>第二种获取矩阵大小的方式我们使用了符号~。“~”代表我们在之后的计算中不需要使用相应位置的变量。这使得matlab脚本在执行的时候不在为这部分数据分配储存空间，因此在程序运行的效率上会更好一些。</p>
+<h5 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h5><p>我们常常需要创建新的矩阵，新矩阵的创建有很多种方法<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = <span class="built_in">zeros</span>(<span class="number">5</span>) <span class="comment">%创建5行5列的零矩阵</span></div><div class="line">a = <span class="built_in">zeros</span>(<span class="number">5</span>,<span class="number">3</span>) <span class="comment">%创建5行3列的零矩阵</span></div><div class="line">a = <span class="built_in">zeros</span>(<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>) <span class="comment">%创建5行3列2层的零矩阵</span></div></pre></td></tr></table></figure></p>
+<p>类似的，我们还有<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = <span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的全1矩阵</span></div><div class="line">a = <span class="built_in">nan</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的全无效数字矩阵</span></div><div class="line">a = <span class="built_in">rand</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的随机矩阵</span></div><div class="line">a = <span class="built_in">randn</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的正态分布随机矩阵</span></div><div class="line">a = <span class="built_in">eye</span>(<span class="number">5</span>) <span class="comment">%创建5阶单位矩阵</span></div></pre></td></tr></table></figure></p>
+<p>我们也可以直接创建矩阵，使用中括号表示矩阵的起始，逗号或者空格表示矩阵的行间隔，分号表示列间隔。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = </div><div class="line">[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></div><div class="line">  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span></div><div class="line">  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>还可以使用冒号：操作符建立等差的行向量（1行n列的矩阵），例如<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">1</span>:<span class="number">1</span>:<span class="number">10</span> <span class="comment">%建立一个以1为始，1为步长，10为终止的行向量</span></div></pre></td></tr></table></figure></p>
+<p>当步长为1的时候，也可以省略，直接用1:10表示起始位置。<strong>注意,MATLAB中所使用的符号均为英文符号！</strong></p>
+<h5 id="元素操作"><a href="#元素操作" class="headerlink" title="元素操作"></a>元素操作</h5><p>创建矩阵以后，我们还需要对元素进行操作。这些操作主要包括索引和赋值。索引就是通过编号来查找矩阵中某一个位置的元素的值，赋值就是改变某一个位置元素的值。<br>矩阵是通过行列来进行索引的，索引用括号表示，括号内可以使用逗号进行分割，表示行或者列的区别。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div><div class="line">x = a(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">% 索引矩阵a的1行2列的数值</span></div><div class="line">x = <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>MATLAB中存储矩阵数据是按照列存储的，因此也可以使用序号对矩阵数据进行索引，因为MATLAB的序号是以1开头的，因此需要的最大值是行数*列数。这种索引方法并不推荐，因为并不直观，容易出BUG，但是介绍这种方法的意义在于写代码的时候有时会因为不注意而忘记写行列索引中的逗号，这种情况下MATLAB可能仍然执行代码，只不过是按照上面介绍的序号索引取值，而不会引发错误警告。在这种情况下，计算实际上是错误的，因为你索引到的数据并不是你想要的，然而MATLAB的解释器并不会发现这个错误，因而是十分危险的。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">x = a(<span class="number">3</span>) <span class="comment">%索引矩阵a的第3个值</span></div><div class="line">x = <span class="number">7</span></div><div class="line">x = a(<span class="number">8</span>) <span class="comment">%索引矩阵a的第8个值</span></div><div class="line">x = <span class="number">6</span></div></pre></td></tr></table></figure></p>
+<p>同时，我们也可以向量化的进行索引，冒号在这里表示在相应的维度取所有有效的值<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = a([<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>) <span class="comment">%索引矩阵a的第1,2行，第3列的值</span></div><div class="line">x = [<span class="number">3</span></div><div class="line">     <span class="number">6</span>]</div><div class="line">x = a(<span class="number">3</span>,:) <span class="comment">%索引矩阵a的第3行，所有列的值</span></div><div class="line">x = [<span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>end在索引中代表相应维度的最后一个有效的序号<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x = a(<span class="keyword">end</span>,<span class="number">3</span>) <span class="comment">%索引矩阵a最后一行，第三列的值</span></div></pre></td></tr></table></figure></p>
+<p>索引中还有一个很重要的方法叫做逻辑索引。在实际应用中，这种索引方式非常方便，可以使得代码更简洁，运行速度也更快。逻辑索引是在索引的位置不传入索引的需要（如第1行，第3列等），而是传入一个与被索引矩阵相应维度等长的逻辑数组，其中每个逻辑元素表示相应的位置是否会被索引到，如果为True就表示索引到，反之则为被忽略掉。例如，我们对一个随机向量r,想要获取数值大于0.5的所有值，可以这样操作<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">r = <span class="built_in">rand</span>(<span class="number">10</span>,<span class="number">1</span>) <span class="comment">%建立[0,1]均匀分布的10行列向量</span></div><div class="line">logicTag = r &gt; <span class="number">0.5</span> <span class="comment">%获取元素是否大于0.5的逻辑向量，向量大小与r相同</span></div><div class="line">x = r(logicTag)</div></pre></td></tr></table></figure></p>
+<p>在实际应用中这种方式非常有用，例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">t = importdata(<span class="string">'sales.csv'</span>) <span class="comment">%一个3列的表格，每一列分别表示 商品出售时间，商品价格，商品折扣</span></div><div class="line">logicTag = t(:,<span class="number">2</span>) &gt; <span class="number">10</span> <span class="comment">%获取商品价格大于10的逻辑向量</span></div><div class="line">saleTime = t(logicTag,<span class="number">1</span>) <span class="comment">%获取商品价格大于10的商品的出售时间</span></div></pre></td></tr></table></figure></p>
+<p>在上面的例子中我们非常方便的获取了商品价格大于10的商品的出售时间，而不需要循环判断。<br>元素操作的另一个重要方面是元素的赋值。上面我们进行取值的时候，元素的索引放在了等号的右边。当进行元素赋值的时候，索引就放在等号的左边来告诉MATLAB的解释器将数值赋值给哪些元素。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div><div class="line">a(<span class="number">1</span>,<span class="number">3</span>) = <span class="number">0</span> <span class="comment">%将1行3列的元素赋值为0</span></div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">0</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>赋值的时候有两种赋值的形式。一种是按照元素赋值，一种是广播赋值。<br>按照元素赋值的时候，等号的左右两边必须是维度相同的矩阵，例如<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a(<span class="number">1</span>,:) = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]; <span class="comment">%正确，等号左右两边都是1行3列</span></div><div class="line">a(<span class="number">1</span>,:) = [<span class="number">0</span>;<span class="number">0</span>;<span class="number">0</span>]; <span class="comment">%报错，等号的左边是1x3向量，右边是3x1向量</span></div></pre></td></tr></table></figure></p>
+<p>另外一种赋值的方法是广播赋值，顾名思义，在这种形式下，等号右边是单一数值，数值将赋值给左边表示的矩阵的任意一个元素，例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div><div class="line">a(<span class="number">1</span>,:) = <span class="built_in">inf</span></div><div class="line">a = [inf inf inf</div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>无穷大inf这个值就赋予了左边a矩阵的1行所有列的所有位置上<br>上面学的索引的方法在赋值的时候都可以使用，因此我们可以快速的实现很多效果，比如有两个等长的向量a和b，我们希望将a中大于0的数字都替换成对应位置的b的数字，可以这样：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bLogic = a &gt; <span class="number">0</span>;</div><div class="line">a(bLogic) = b(bLogic);</div></pre></td></tr></table></figure></p>
+<p>是不是很方便呢？</p>
+<h5 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h5><p>矩阵的运算非常多，这里介绍主要的几种。<br><strong>转置</strong>：矩阵的转置是常见的矩阵运算，数学中的转置用T来表示，在MATLAB中，用英文中的一撇来表示<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">A = A';</div></pre></td></tr></table></figure></p>
+<p>矩阵的转置除了本来的数学意义以外，很多情况下也用来将原始的数据进行转置以满足一些函数的输入需求，某些函数要求输入的数据是行向量或者列向量的形式。<br><strong>统计计算</strong>：统计计算中经常要求计算最大值，最小值，标准差等等统计量。这些统计量的计算在MATLAB中都有具体的函数，以max函数为例：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>; <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>; <span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line">b = max(a) <span class="comment">%默认，按列取最大值</span></div><div class="line">b = <span class="number">7</span> <span class="number">8</span> <span class="number">9</span></div><div class="line">b = max(a,[],<span class="number">2</span>) <span class="comment">%按行取最大值</span></div><div class="line">b = [ <span class="number">3</span></div><div class="line">      <span class="number">6</span></div><div class="line">      <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>因为MATLAB的逻辑中，行代表观测的样本，列代表观测特征，因此在默认情况下，统计函数都是对列进行计算，也就是对观测的特征进行计算。也可以通过输入特别的参数来指定特定的计算维度。如果想要得到一个矩阵的最大值怎么办呢？<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b = max(max(a)) <span class="comment">%naive的方法</span></div><div class="line">b = max(a(:)) <span class="comment">%高级的方法</span></div></pre></td></tr></table></figure></p>
+<p>a(:)的方法可以将矩阵a完全向量化为一个列向量,因此使用一次，max函数就可以得到整个矩阵的最大值。<br><strong>数值计算</strong><br>矩阵可以直接与一个数值进行加减乘除，结果是矩阵中每一个元素对这个数值进行加减乘除；矩阵相互之间可以相互加减，要求是相互加减的矩阵维度大小相同，例如其中一个矩阵是3x5的矩阵，另一个矩阵也必须是3x5.矩阵之间也可以相互乘除，要求也线性代数的一样。<br>那么，如果想要让矩阵中每一个元素分别乘除另一个矩阵中对应的元素怎么办呢？只要在乘除符号前加上英文的.就可以。.*和./代表的含义就是逐元素的乘和除。此时要求两个矩阵对应维度大小相同，与矩阵相互加减的情况相同。</p>
+<p>这里举一个例子，在数据分析中有一个常见的需求是对各个观测量的数值进行归一化，也就是让各个观测维度的数值均值为0，方差为1。这样做的好处是使得各个观测的特征对数据分布的贡献相同。这样讲有点抽象，我们再举一个实际例子，譬如说我们对房价的一个观测：</p>
+<table>
+<thead>
+<tr>
+<th>样本序号</th>
+<th>与中心城区距离</th>
+<th>面积</th>
+<th>价格</th>
+<th>层高</th>
+<th>客厅面积与卧室面积之比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>50</td>
+<td>100</td>
+<td>1000000</td>
+<td>20</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>80</td>
+<td>2000000</td>
+<td>15</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>在这个例子里面一个房子就是一个观测样本，房子的面积、价格等等都是对于这个样本的观测属性，或者说是特征。不同的特征，数值范围不同。在这个例子当中，房价这个特征数值最大，客厅卧室面积之比这个特征数值最小。可是如果不做处理，价格这个特征的变化量在数值上要远远大于面积之比的变化量，这样就可能掩盖后者变化造成的影响。为了在数值上让不同的特征的变化有相同的权重，就需要做归一化。也就是让不同的特征在所有样本上的值均值为0，方差为1。在数学上，假设某个维度用$X$表示，$X_i$表示第i个观测值，$\mu_x$表示$X$的均值，$\sigma_x$表示$X$的标准差,使用$X_i^{transformed}$表示转换以后的特征数值。那么可以使用<br>$$X_i^{transformed}=\frac{X_i-\mu_x}{\sigma_x}$$<br>这个公式进行归一化转换。假设我们我们这个观测的表是x，一个最为naive的操作是：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[nr,nc] = <span class="built_in">size</span>(x); <span class="comment">%获取行数和列数</span></div><div class="line"><span class="keyword">for</span> m = <span class="number">1</span>:nc <span class="comment">%对于每一列</span></div><div class="line">    rowMean = mean(x(:,m));</div><div class="line">    rowStd = std(x(:,m));</div><div class="line">    <span class="keyword">for</span> n = <span class="number">1</span>:nr <span class="comment">%对于每一行</span></div><div class="line">        x(n,m) = (x(n,m) - rowMean)/rowStd;</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>另一种操作是通过向量化的方式，其中repmat的作用是将一个矩阵重复堆叠。repmat(x,2,1)的含义是将x矩阵当做一个元素堆叠为两行一列，如果x的的维度是mxn，那么堆叠以后就会成为(2*m)xn的矩阵。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">L = <span class="built_in">size</span>(x,<span class="number">1</span>); <span class="comment">%获取x表格的长度/矩阵的行数</span></div><div class="line">xMean = mean(x); <span class="comment">%获取x的各个维度(各列)的平均值</span></div><div class="line">xStd = std(x); <span class="comment">%获取x的各个维度(各列)的标准差</span></div><div class="line">x = (x - <span class="built_in">repmat</span>(xMean,L,<span class="number">1</span>))./<span class="built_in">repmat</span>(xStd,L,<span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>那么关于向量数据结构的讲解就到这里吧！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/04/20/Fun-with-your-first-Day-with-Matlab-S01E01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/04/20/Fun-with-your-first-Day-with-Matlab-S01E01/" itemprop="url">Fun with your first Day with Matlab S01E01</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T22:54:54+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/MATLAB/" itemprop="url" rel="index">
+                    <span itemprop="name">MATLAB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我打算写一系列关于MATLAB入门的文章。原因有二，一个是我发现身边很多搞科研的小伙伴有处理数据，实现算法的需求，但是却苦于没有办法入门一种处理数据的编程语言（或者说脚本语言吧）。虽然说市面上MATLAB入门的书籍很多，但是我等写代码的人总有一种“造轮子”的情怀，总觉得还不如自己搞的好，因此，还是按照自己的思路写一套入门的教程似的东西。二来嘛，也是自己觉得好玩咯。</p>
+<h4 id="这些文章适合谁"><a href="#这些文章适合谁" class="headerlink" title="这些文章适合谁"></a>这些文章适合谁</h4><p>正如上面所说的，如果你已经有了MATLAB编程经验了，我只能说——大神求轻拍！</p>
+<h4 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h4><p>Matlab可以解释成Matrix Lab，直译成为矩阵实验室。它的计算是围绕着矩阵的，因此对向量化的计算支持很好（至于什么是向量化的计算，也许以后你就明白了吧…）。 据我所知，MATLAB，R语言，Python和Java都是比较流行的科学计算语言（加上Java是因为<a href="https://imagej.nih.gov/ij/" target="_blank" rel="external">ImageJ</a>的开发是使用Java的，而ImageJ在至少是生物化学学科的研究中，是有非常重要的地位的）。其中MATLAB，R以及Python都含有大量的程序包，使得你可以轻而易举的用一两行代码实现一些常用的算法和数据统计，非常适合快速的算法开发和验证，因此在学术研究中扮演了非常重要的作用。在实际的工业生产中，因为考虑到代码运行的效率的问题，可能会选择用更底层的语言如C++来作为最终产品的实现，但编程的思维和逻辑是不变的，这也是一些招聘岗位对掌握一门统计语言的应聘者比较青睐的原因吧。<br>实际上，上面说的都是废话，既然来看这篇文章，当然是本来就是下定决定学MATLAB的啦。</p>
+<h4 id="文章的结构"><a href="#文章的结构" class="headerlink" title="文章的结构"></a>文章的结构</h4><p>我希望能从浅入深的带领大家学习MATLAB脚本的书写，让大家感受到其中的乐趣。近来有一款非常流行的游戏叫我的世界(Minecraft)，这款游戏之所以风靡全球，就是因为它的玩法构建在非常简单的原理（方块堆叠）之上，却给了玩家极大的自由发挥的空间。更重要的是，不同的简单的方块的组合，形成了复杂而庞杂的结构，使得观者惊叹，制作者也获得了非常大的成就感。写代码也是这样的，再复杂的程序也不过是顺序执行、判断跳转和循环执行组合而成的，却产生了这么多拥有复杂而强大的功能的软件。当你开始写代码的时候，你的面前就是等待你创造的世界！<br>至于文章的结构嘛，还没有特别想好，一边写一边看吧！</p>
+<h4 id="准备什么"><a href="#准备什么" class="headerlink" title="准备什么"></a>准备什么</h4><p>一台电脑，我安装的是MATLAB R2016b，再加上你的热情，就可以开始啦！</p>
+<h3 id="熟悉MATLAB"><a href="#熟悉MATLAB" class="headerlink" title="熟悉MATLAB"></a>熟悉MATLAB</h3><h4 id="MATLAB的界面"><a href="#MATLAB的界面" class="headerlink" title="MATLAB的界面"></a>MATLAB的界面</h4><p>我在这里不想再赘述MATLAB的安装了，一般下载的源文件中都会有readme之类的文本教你怎样一步一步的安装MATLAB，这里就略过。<br>我们可以看一下MATLAB的界面：</p>
+<p><div align="center"><br><img src="http://i4.buimg.com/567571/13f8358b92553488.png" alt="“MATLAB的界面”"><br></div><br>其中包含了几个重要的部分：</p>
+<ol>
+<li>菜单栏：里面包含了很多功能，我们有机会慢慢讲述。软件的设置，新建脚本文件，函数，类文件都是在这里<br></li>
+<li>工作目录：和R，Python一样，MATLAB也有工作目录。工作目录有这样的几个含义，当你输出输入文件的时候，如果没有指明具体的路径，而是只给出了文件名，那么就默认从工作目录进行读取和输出。如果读取的时候没有找到文件，就会报错。另外，当你执行一个命令的时候，MATLAB会首先从已经加入到一个路径列表里面的那些路径中从上到下寻找你输入的命令对应的源代码文件，如果没有找到，就会从当前工作目录找。如果还找不到，就会报错。这就意味着，当你做一个项目写了很多函数的时候，只能在存放这些函数的目录下进行调用，否则就会找不到命令。当然，你还可以将写好的代码的路径添加到MATLAB中的路径表中，这样就可以在其他工作目录下调用自己写的代码了。这里要注意的是，如果自己写的代码中的函数或者类与MATLAB自带的函数或者类同名，那么<strong>MATLAB会先找到哪个就用哪个</strong>，无疑会带来很多不确定性。MATLAB的命名是大小写敏感的，因此，自己写的函数可以用特殊的命名方法或者改变大小写来避免与MATLAB自带的函数混淆。<br></li>
+<li>当前文件夹： 列出了当前工作目录下的文件，类似于Window的资源管理器<br></li>
+<li>命令行窗口：最为重要的窗口，输入命令和观察计算的结果都是在这里<br></li>
+<li>WorkSpace：显示了当前可以直接调用的计算中间值的名称和类型。譬如说你直接输入：<br><br>c = a + b;<br><br>这样会报错，说找不到a和b。因为你并没有声明a和b到底是什么，因此MATLAB就无法对他们进行运算。如果在命令行窗口输入<br><br>a = 1;<br><br>意味着你声明了一个变量a，值为1，这个a就会出现在WorkSpace中，从此以后你就可以随时调用。举一个不太恰当的例子，WorkSpace就好比是写作业时候的书桌一样，你首先要准备好要用的笔，橡皮，本子等等，相当于声明计算所需的变量。声明好以后，这些变量就像已经拿出来的笔、橡皮和本子一样可以随时使用。等到作业写完了，最好还要清理一下桌子上(WorkSpace)的杂物，让它保持整洁。<br></li>
+<li>历史记录：非常有用的一个窗口，如果你找不到这个窗口，可以在1中的菜单中找到Layout——Show——Command History——Docked来打开它。这里面记录了你输入的历史命令，当你需要进行很多重复性的工作的时候，可以直接复制这里面的内容，再做修改使用，提高效率。当然，最快的方法还是写一个批处理脚本咯。历史记录还有一个作用，当你处理玩数据以后，可以按住Shift点选一定范围内的所用命令，右键选择Create Script，将创建一个脚本文件。你可以保存这个脚本文件，当需要重现处理结果的时候可以参考之。最后，历史记录还支持Ctrl+F搜索。如果你忘了一条命令原来是怎么用的了，可以用这个方法检索过去你使用的记录。</li>
+</ol>
+<h4 id="高级的计算器"><a href="#高级的计算器" class="headerlink" title="高级的计算器"></a>高级的计算器</h4><p>为了熟悉MATLAB，我们可以先把它当做一个计算器来使用。这个高级的计算器可以识别你输入的表达式，并且计算出这个表达式的值：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; <span class="number">1</span>+<span class="number">2</span></div><div class="line">&gt;&gt; <span class="built_in">ans</span> = <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>我们可以看到MATLAB将表达式1+2的值正确的计算了出来，并给出了结果3。有趣的是，MATLAB的命令行窗口显示的是<em>ans=3</em>，再看看你的WorkSpace，是不是发现其中有一个名为ans的变量，显示值为3？这是因为MATLAB将这个表达式的计算结果默认的赋予给了变量<em>ans</em>。如果我们人为的指定计算结果赋予的对象，那么MATLAB就会将值赋予给我们指定的变量上：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; a = <span class="number">1</span>+<span class="number">2</span></div><div class="line">&gt;&gt; a = <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>再看Workspace，就会发现你设置的变量a以及它的值3了。现在我们每次输入一个命令，马上在命令行窗口就可以看到执行的结果，这在有些时候是非常麻烦的事情。解决的办法就是在命令之后加上英文的分号 ;<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; b = <span class="number">1</span>+<span class="number">2</span>;</div></pre></td></tr></table></figure></p>
+<p>这样就看不到计算的结果了。在Workspace里面你仍然可以看到创建的变量b，可见这样的命令与不加分号的时候结果是相同的。加分号的好处可以在这个例子中体现：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; vec = <span class="built_in">zeros</span>(<span class="number">100</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
+<p>可以尝试一下上述命令的执行结果。上述命令的作用是产生一个100行1列的全零向量，通常用于一个数组的初始化，最后将这个向量赋予给变量vec，如果这个指令不加分号，那么就会在命令行窗口打印出来100行的0，非常的蛋疼，所以说，引号还是很有用的。<br>上面讲到的，如果我们不指定表达式的值赋予给谁，那么MATLAB就会默认的赋予给名为ans的变量。可见，ans这个词在MATLAB中是有特殊含义的，不能随便使用，这样的“保留”了特殊含义的单词还有很多：</p>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ans</td>
+<td>表达式值默认赋予对象</td>
+</tr>
+<tr>
+<td>pi</td>
+<td>圆周率常量</td>
+</tr>
+<tr>
+<td>eps</td>
+<td>微小的正值，常用于防止分母为0的情况</td>
+</tr>
+<tr>
+<td>i，j</td>
+<td>尽管可以任意负值，但常用于表示复数</td>
+</tr>
+<tr>
+<td>inf</td>
+<td>表示无穷大量，-inf表示负无穷</td>
+</tr>
+<tr>
+<td>nan</td>
+<td>表示Not a Number，一般永无表示解析失败的值</td>
+</tr>
+</tbody>
+</table>
+<p>在使用MATLAB计算表达式数值的时候，除了常用的加减乘除以外，还有其他的高级运算符<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = <span class="built_in">log</span>(<span class="number">10</span>); <span class="comment">%自然对数</span></div><div class="line">b = <span class="built_in">log10</span>(<span class="number">10</span>); <span class="comment">%以10为底的对数</span></div><div class="line">c = <span class="built_in">exp</span>(<span class="number">10</span>); <span class="comment">%自然常数的10次幂</span></div><div class="line">d = <span class="number">2</span>^<span class="number">3</span>; <span class="comment">%2的3次幂</span></div><div class="line">e = <span class="built_in">sin</span>(<span class="built_in">pi</span>); <span class="comment">%正弦</span></div><div class="line">f = <span class="built_in">cos</span>(<span class="built_in">pi</span>); <span class="comment">%余弦</span></div></pre></td></tr></table></figure></p>
+<p>等等，常见的数学运算一般都可以找到相应的符号来进行运算。<br>MATLAB还支持矩阵的运算。<strong>下面的例子里面，我们用大写字母表示矩阵，小写字母表示数字</strong><br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">A = <span class="built_in">zeros</span>(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">%创建2行3列的全零矩阵A</span></div><div class="line">A1 = A + <span class="number">1</span>; <span class="comment">%矩阵加上一个数字，相当于每一个矩阵元素加上这个数字</span></div><div class="line">A2 = A * <span class="number">5</span>；<span class="comment">%矩阵乘以一个数字，相当于每一个元素乘以这个数字</span></div><div class="line">B = <span class="built_in">ones</span>(<span class="number">3</span>,<span class="number">2</span>); <span class="comment">%创建3行两列的全一矩阵B</span></div><div class="line">A + B; <span class="comment">%错误，矩阵相加的时候需要两个矩阵具有相同的大小，结果是对应的元素相加</span></div><div class="line">A + B’; <span class="comment">%正确，单引号表示矩阵的转置，B通过转置就有了和A相同的大小，可以相加</span></div><div class="line">A * B’; <span class="comment">%错误，矩阵相乘需要满足数学上的需求，A右边乘的矩阵需要有三行，B的转置只有两行</span></div><div class="line">A * B; <span class="comment">%正确，符合矩阵乘法的要求，获得2行2列的结果</span></div><div class="line">A .* B'; <span class="comment">%正确，乘号前面加英文句号表示对应元素相乘，要求两个矩阵大小相同</span></div></pre></td></tr></table></figure></p>
+<p>向量的计算法则与矩阵相同，可见，MATLAB为矩阵的运算提供了很好的支持。那么问题来了，如果想要生成一个全部为9的3*2的矩阵怎么办？答案是：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">A = <span class="built_in">ones</span>(<span class="number">3</span>,<span class="number">2</span>) * <span class="number">9</span>;</div></pre></td></tr></table></figure></p>
+<p>是不是很简单？<br>最后，需要提醒大家注意的是，MATLAB中对于大小写敏感，也就是A和a是代表不同的东西的。另外，MATLAB输入的表达式需要用英文字符，如果使用中文字符将无法解析。<br>在上面的例子中，我们还使用了MATLAB中自带函数ones，zeros等才创建矩阵或者向量。其实，MATLAB中包含了大量的可以直接调用的函数。那么，是不是MATLAB高手就都会使用这些函数呢？对于常用的函数来说是的，但是，还有很多不常用的函数，它们的用法，除了上网搜索以外，MATLAB中还内置了doc文档提供详细的权威的解释，实在是学习MATLAB的好帮手。下一节，我们就来讲解如何使用doc文档。</p>
+<h4 id="资深的老师doc"><a href="#资深的老师doc" class="headerlink" title="资深的老师doc"></a>资深的老师doc</h4><p>不管是Python，R还是MATLAB，都内置了一个函数用于帮助使用者了解一个指令的用法和作用的。实际上，Windows的cmd控制台以及Linux的终端都是这样的。<br>在MATLAB中有两个函数，help和doc来完成这个功能，譬如说我们想要查找mean这个函数的用法<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; help mean</div><div class="line">&gt;&gt; mean   Average or mean value.</div><div class="line">    S = mean(X) is the mean value of the elements in X <span class="keyword">if</span> X is a vector. </div><div class="line">    For matrices, S is a row vector containing the mean value of each </div><div class="line">    column. </div><div class="line">    For N-D arrays, S is the mean value of the elements along the first </div><div class="line">    array dimension whose <span class="built_in">size</span> does not equal <span class="number">1.</span></div><div class="line"> </div><div class="line">    mean(X,DIM) takes the mean along the dimension DIM of X.</div><div class="line"> </div><div class="line">    S = mean(...,TYPE) specifies the type in which the mean is performed, </div><div class="line">    and the type of S. Available options are:</div><div class="line"> </div><div class="line">    <span class="string">'double'</span>    -  S has class double <span class="keyword">for</span> any input X</div><div class="line">    <span class="string">'native'</span>    -  S has the same class as X</div><div class="line">    <span class="string">'default'</span>   -  If X is floating point, that is double or single,</div><div class="line">                   S has the same class as X. If X is not floating point, </div><div class="line">                   S has class double.</div><div class="line"> </div><div class="line">    S = mean(...,NANFLAG) specifies how NaN (Not-A-Number) values are </div><div class="line">    treated. The default is <span class="string">'includenan'</span>:</div><div class="line"> </div><div class="line">    <span class="string">'includenan'</span> - the mean of a vector containing NaN values is also NaN.</div><div class="line">    <span class="string">'omitnan'</span>    - the mean of a vector containing NaN values is the mean </div><div class="line">                   of all its non-NaN elements. If all elements are NaN,</div><div class="line">                   the result is NaN.</div><div class="line"> </div><div class="line">    Example:</div><div class="line">        X = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>; <span class="number">3</span> <span class="number">3</span> <span class="number">6</span>; <span class="number">4</span> <span class="number">6</span> <span class="number">8</span>; <span class="number">4</span> <span class="number">7</span> <span class="number">7</span>]</div><div class="line">        mean(X,<span class="number">1</span>)</div><div class="line">        mean(X,<span class="number">2</span>)</div><div class="line"> </div><div class="line">    Class support <span class="keyword">for</span> input X:</div><div class="line">       float: double, single</div><div class="line">       integer: uint8, int8, uint16, int16, uint32,</div><div class="line">                int32, uint64, int64</div><div class="line"> </div><div class="line">    See also median, std, min, max, var, cov, mode.</div><div class="line"></div><div class="line">    Reference page <span class="keyword">for</span> mean</div><div class="line">    Other functions named mean</div></pre></td></tr></table></figure></p>
+<p>我们可以看到，在使用help指令以后，命令行窗口打印出来了一段关于mean函数的描述。包括函数作用的概述（Average or mean value），函数的使用方法，每一个输入和输出函数的作用等等，非常的详尽。最后还给出了使用的例子，相当于一个电子版的API（Application Programming Interface）速查手册,非常之方便。<br>还可以看到后面有一行 See also…，这是MATLAB为你推荐的其他相关的函数，对于mean来说，包括了中位数函数median，标准差std，最大值与最小值，方差，协方差和众数mode函数，对于学习和了解更多命令非常有帮助。<br>然后是Reference page for mean这个超链接，点击以后来到一个类似于网页的东西，里面提供了更为详尽的关于mean函数的内容，非常有用，这个效果和直接使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">doc mean</div></pre></td></tr></table></figure></p>
+<p>是相同的，在文档里面查看函数的用法，界面更加漂亮好看，内容也更加丰富。这个文档在MATLAB的官方网站上也是提供的。MATLAB的某些版本可能不提供本地的doc文档。<br>最后还有一个很重要的是Other functions named mean，这意味着mean函数在MATLAB中不止有一个。还记得前面我们说的MATLAB搜寻函数的方式吗？MATLAB先在内部的路径列表中依次寻找你输入的指令，用找到的第一个作为指令的解析方式。但是，如果这个指令不是你需要的呢？这个时候就可能造成错误。如果你发现你使用的指令输出的结果与你预想的不同，那么请输入<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; help 指令名</div></pre></td></tr></table></figure></p>
+<p>来检查MATLAB是否是使用了你需要的指令，如果没有，请点击Other functions named 指令名 来寻找想要的指令吧！</p>
+<h4 id="多说几句"><a href="#多说几句" class="headerlink" title="多说几句"></a>多说几句</h4><p>写到这里，基本上这篇文章也该结束了。但是还想说些乱七八糟的东西。譬如说玩到现在，你的命令窗口和workspace应该已经很乱了吧，这个时候可以执行<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; clc</div></pre></td></tr></table></figure></p>
+<p>来清空命令行窗口中的东西。还可以使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; clear all</div></pre></td></tr></table></figure></p>
+<p>来清空工作区间中的东西。<br>另外，总有人问我说怎么样才能更快更好的学习编写代码，我自己的经验是一定要上手实际的去写命令，实现一定的功能，也就是实战啦。编程是一门实践性很强的技术，即使是有经验的程序员，如果长时间不写代码一定会手生的，所以请多加练习吧（日语翻译风）！<br>从下一节开始，我将以解决实际问题的角度来教大家写一个函数。程序中的函数和数学上的函数有一定的联系但是也有很大的差异。程序中的函数是指一段可以重复调用的，接受输入或者不接受输入，按照一定的顺序进行运算的代码段，函数的使用可以减少编码中重复的编写相同的逻辑，还可以通过函数名的命名提高程序的可读性。<br>我自己喜欢写程序的一个原因就是每次调用自己写好的函数的时候都特别有成就感。函数将具体的实现过程隐藏起来，使你可以很方便的使用它所有的功能。就好比你做了一个好用的工具，每次干活的时候用你的工具来做，特别方便好用，固然是有成就感。看起来枯燥的编码就是将复杂的问题分解为一个个简单的小功能，再把每个小功能用函数实现，每一步都伴随着一点点的成就感。最后再将这些函数按照算法的逻辑组合调用，就形成了复杂神奇的程序。<br>说了这么多，是不是也变得期待起来了呢？我们下次再见吧！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/04/20/三面骰/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/04/20/三面骰/" itemprop="url">三面骰</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T15:39:07+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/闲谈/" itemprop="url" rel="index">
+                    <span itemprop="name">闲谈</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>近日看了一本书叫做《白话大数据与机器学习》，里面有一句话说的很有意思。具体是什么忘了，书也不在身边。大概就是说世上没有三个面的骰子。我觉得很有意思，世界上真的没有三面的骰子吗？不知道读者会作何解答。你可以想一想在往下看。<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p><div align="center"><br><img src="http://i1.piimg.com/567571/6bce6162786d0d97.jpg" alt="“三面骰”"><br></div><br>这是我给出的解答，我用3ds max渲染的三面骰，还不错吧？不过这个骰子是“哪个面朝下，投出的数字就是哪个”。是不是很蛋疼？快给出你觉得更好的三面骰吧！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/04/15/漫谈机器学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/04/15/漫谈机器学习/" itemprop="url">漫谈机器学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-15T22:41:09+08:00">
+                2017-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>作者：赵瀚森  zhaohs12@163.com<br>如需引用，请注明出处</p>
+<p>&emsp;&emsp;随着大数据的火热，机器学习这类“专业”的词汇也逐渐成为程序员和普通吃瓜群众时常听到的词汇。机器学习，这个词不是很好懂，机器学习什么呢？这篇文章我尝试从自己学习和实践的角度做一些“科普”。</p>
+<h2 id="什么是学习"><a href="#什么是学习" class="headerlink" title="什么是学习"></a>什么是学习</h2><p>&emsp;&emsp;通常我们说人的学习，是指获取解决一类问题的能力的过程。这个问题可以是具体的，一道数学题，做一道菜等等。也可以是抽象的，比如如何与他人打交道等。但是机器（也就是计算机）其实学不了这么高级的东西，尽管近来新的成果可以让机器生成特殊风格的图片，产生以假乱真的手写字体等等功能，但本质上这些技术中计算机执行的逻辑还是程序员事先设定好的，也就是<strong>按照特定的顺序和逻辑完成工作</strong>这一件事是程序员决定的，目前计算机还不能学习。<br>&emsp;&emsp;那么计算机到底学习了什么呢？实际上机器学习里面很多时候我们都是在做分类问题。所谓分类问题就是经过学习（更专业的叫做训练）的程序（分类器）可以对数据进行某种评价，我们计算机做的这一系列的事情：训练——评价——应用 为机器学习。在<a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="external">wiki</a>上，是这样表述的：</p>
+<blockquote>
+<p>Machine learning is the subfield of computer science that, according to Arthur Samuel in 1959, gives “computers the ability to learn without being explicitly programmed.” Evolved from the study of pattern recognition and computational learning theory in artificial intelligence, machine learning explores the study and construction of algorithms that can learn from and make predictions on data</p>
+</blockquote>
+<p>翻译过来就是：</p>
+<blockquote>
+<p>根据1959年Arthur Samuel 的定义，机器学习是计算机科学的一个分支，旨在让计算机在没有被明确的编程的情况下学习。机器学习是从模式识别和人工智能中的计算学习领域中发展起来的，通过算法来对数据进行学习和预测的方法。</p>
+</blockquote>
+<p>&emsp;&emsp;这个定义反正我感觉讲得还不够清楚，下面我们就讲，什么是数据，为什么要对数据进行学习和预测，以及机器学习是怎么工作的。<br>&emsp;&emsp;值得注意的是，机器学习，模式识别，人工智能这些东西相互是什么关系，我觉得很乱。大概宽泛的讲，人工智能更像是一个概念，包含的东西很多。机器学习是一类技术的总称，模式识别是机器学习的技术基础。大概就是这样吧。</p>
+<h2 id="什么是数据"><a href="#什么是数据" class="headerlink" title="什么是数据"></a>什么是数据</h2><p>&emsp;&emsp;大数据时代——我们常常听人这样表述，什么是数据呢？<br>&emsp;&emsp;譬如说，1101这四个数字是不是数据呢？我们认为，它不是。因为尽管它是一组数字，但是我们并不能通过它获得什么信息。可是如果我说，这是我的手机号码后四位，那么就可以说，这是一个数据。<br>&emsp;&emsp;也就是说，数据的存在是为我们提供信息的，也可以说，数据的存在是<strong>消除不确定性</strong>的。从这个角度来讲，数字不一定是数据（正如上面举出的例子），数据也不一定是数字（比如说，这个衣服的尺码是XL，就是一个数据，为我们消除了衣服大小的不确定性）<br>&emsp;&emsp;一组数据到底为我们消除了多少的不确定性呢？是有一个量化指标的，它与另外一个概念，信息熵有关。这个东西有时间我们再谈。总而言之，数据就是能够为我们提供信息，消除不确定性的东西。</p>
+<h2 id="对数据的学习和预测"><a href="#对数据的学习和预测" class="headerlink" title="对数据的学习和预测"></a>对数据的学习和预测</h2><h3 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h3><p>&emsp;&emsp;上一节讲到，数据能够带来信息，消除不确定性。这样的话，我们就可以根据数据来进行决策。<br>&emsp;&emsp;譬如你去旅游区，玩着玩着口渴了，看见一个卖矿泉水的，你就问</p>
+<blockquote>
+<p>大爷，水多少钱？<br>大爷： 20一瓶</p>
+</blockquote>
+<p>&emsp;&emsp;然后你就走了，因为你觉得太贵太坑人了。这个过程其实就是获取数据（问价格）——分析数据（贵或者不贵）——作出决策 的过程。<br>&emsp;&emsp;这样的行为发生在我们每天的活动中，实在是太普遍了。在某些情况下，譬如数据量非常大的情况下，我们认为人工去做这样的事情太慢成本太高了，于是我们打算用计算机来帮助我们。上面的例子可以很好的抽象成为一段决策代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//get data</span></div><div class="line">water_price = ask_saler();</div><div class="line"><span class="comment">// prediction</span></div><div class="line"><span class="keyword">if</span> (water_price &gt; <span class="number">10</span>)&#123;</div><div class="line">	do_not_buy();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	buy_water();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;如果景区有100个卖水的人，你就可以开心的用这段代码代替你自己去买水啦~<br>&emsp;&emsp;我们在写这段代码的时候，其实已经做了两件事，获取数据和预测。我们获取的数据是水的价格，预测的是消费者的行为（买还是不买）。我们对消费者可能出现的行为建立了一个分类器，就是那个if-else语句，对于每一个数据water_price，我们都可以对消费者的行为进行预测，这就是计算机为我们做的事情。在我们这个分类器里面，有一个非常重要的数值，就是<em>10</em>这个数，我们实际上就是以10作为分隔点，进行判断预测的。那么，这个<em>10</em>是怎么来的呢？实际上，获取这个数字，就是机器学习里面，训练(train)这一步所做的事情。</p>
+<h3 id="有监督的学习"><a href="#有监督的学习" class="headerlink" title="有监督的学习"></a>有监督的学习</h3><p>&emsp;&emsp;那么什么是训练呢？如果我现在不知道消费者行为与水价格之间的关系，我们可以对整个研究的系统（景区里面的游客和小贩）做许多次观测，这种观测成为对系统的采样——因为通常由于观测时间或者数据储存量或者观测成本的限制，我们往往不能获得全部的交易信息，只能获得系统的一部分信息。譬如每天发生一万次小贩和游客的交谈，因为景区管理员有限么，只能记录下来500次，那么我们获得的500次数据就是用来训练的样本。我们实际上<strong>假设整个系统的行为，和我们观测的样本的行为是一致的</strong>。<br>&emsp;&emsp;通过500个样本–记录了小贩的出价和游客的决定–那么我就可以去训练我的分类器。我这个分类器很简单，只需要一个参数，就是那个决策的阈值（上文中的<em>10</em>）,一旦这个阈值确定了，我们的分类器也就设定好了。<br>&emsp;&emsp;那么怎么决定这个阈值呢？<br>&emsp;&emsp;有一种有效但粗暴的方法。因为我知道500个样本中的小贩出价（X），还知道游客的行为（y），那么我可以获得最高出价（X_max）和最低出价（X_min）,然后我把阈值（假设为alpha）从最低出价开始，以一定步长（例如0.1元），依次当做我分类器的阈值，然后就可以用这个分类器去做预测，假设预测的结果是y’，那么我就可以比较y’和y之间，是不是差别很大。最后，我取使得y‘和y差别最小的那个阈值作为我分类器最终的阈值。<br>&emsp;&emsp;这样的过程，我们使用了带“标签”的数据，也就是已知我们想要预测的结果（游客行为）的真实情况的数据来作为我们训练分类器的反馈和参考来获得表现最好的分类器。这样的过程，就叫做有监督的学习，这些带标签的数据，就好比老师一样，我们在尝试每一个阈值的时候，通过比对这个阈值预测的结果和真实的结果，就获得一个反馈，好比老师跟你说，你做得好！或者你做得不好，一样。通过这种方式训练分类器的机器学习算法成为有监督的机器学习。<br>&emsp;&emsp;有监督的机器学习看起来很美，但是有两个问题。一个是我们必须获取带有标签的数据，在真实情况下，我们可能很难获取这样的数据，或者是获取这样的数据成本很高。比如，我想要通过新生儿的基因组序列，来预测他成年后会不会酗酒，这个事情如果要做，获取数据就很难。因为一个人从新生儿到成年，需要很长时间，我们的研究如果拖20年，就很悲剧。你还可以说，我们可以直接测量成年人的基因，考察与饮酒状况的相关性，这话也没错，但是你追踪这些人真实的饮酒情况，需要的人力成本很高，这个标签，就非常贵。<br>&emsp;&emsp;有监督的机器学习还有一个问题，就是我们必须事前知道我们想要预测的对象有哪些情况，譬如在上面的例子里面，游客只有两种反应——买或者不买。但是实际情况下，譬如购物网站想要获得用户的购买习惯，我们很可能不能穷举所有可能的购物习惯。即时我们通过经验列举出来一些可能存在的购物行为模式，也可能是不准确的，或者不完备的。有监督的学习事先就对数据的表现给定了一些预期，在发现大量数据中存在的未知的模式就无能为力了。</p>
+<h3 id="无监督的学习"><a href="#无监督的学习" class="headerlink" title="无监督的学习"></a>无监督的学习</h3><p>&emsp;&emsp;在这种情况下，无监督的学习就派上了用场。我们还是举游客的例子。譬如说，我现在很无聊，我是景点入口的门卫，我决定在无聊的工作中找点乐子。我观察每一个进来游玩的客人的衣着，希望能发现来景区游玩的游客衣着的规律（或者说模式）。譬如说我只看上衣和裤子（裙子），而且只看颜色的深浅。那么通过统计1000个来游玩的客人的衣着，我可能发现有很大部分人穿着都是【上-浅-下-浅】的模式，还有一小部分穿的是【上-深-下-深】的模式，剩余一些零星的和其他人差别很大，我就不管了。那么我就从这个数据中学习到了两个模式，就是【上-浅-下-浅】和【上-深-下-深】的模式。<br>&emsp;&emsp;值得注意的是，这两个模式并不是我事先定义好的，而是从数据集中“看”出来的，完全通过数据本身的分布情况获得的结果，因此在识别一些未知的模式的时候很有用。但是，无监督的算法也不是万能的，相比于有监督的算法事先定义好的具有清晰的意义的输出结果，无监督模型获得的类别的模式有可能是看不出来具体意义的结果。<br>&emsp;&emsp;目前的机器学习研究和应用中，有监督的模型是应用更为广泛的。</p>
+<h3 id="多维的学习"><a href="#多维的学习" class="headerlink" title="多维的学习"></a>多维的学习</h3><p>&emsp;&emsp;刚才我们提到的景区游客衣着的例子，实际是一个二维的数据，因为我们对一个样本（游客）观测了两个指标（变量）——上衣的深浅和裤子（或裙子）的深浅。实际工作中，维度可能会达到几十甚至上百。<br>&emsp;&emsp;在人脸识别的过程中，程序可能会获得人脸上百的观测的指标，例如眉毛间距，额头大小，嘴唇厚度等等，这些数据综合的结果就是这个人脸和数据库里面的某某某有多像的一个输出。<br>&emsp;&emsp;机器学习和人很多时候都是在做同一件事情，就是把对一个观察对象获取的很多个维度的数据综合考虑，获得一个<em>一维可分</em>的结果。这么说又很抽象，举个例子：<br>&emsp;&emsp;譬如说你去相亲，第一眼看到对方，你自然的考察了对方很多个维度的信息，衣着，容貌，气质，动作等等，通过这些信息，你马上获得了一个结果——第一眼看上去这个人顺眼/不顺眼。这个顺眼或者不顺眼，就是一个一维可分的结果。是可以直接用来决策（好好谈/糊弄一下）。<br>&emsp;&emsp;机器学习也是这样的，通过检测犯罪现场指纹上几百个特征点的位置，与数据库任意一个指纹比对，获得像/不像的结果；通过贷款申请人经济状况、消费记录等几十上百个维度的信息，获得通过申请/拦截申请的结果；通过电商用户几个月甚至数年的购买记录，获得推荐/不推荐这个商品促销广告的结果。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>&emsp;&emsp;我们人的大脑通过长时间的进化，获得了一秒钟判断一个人是美是丑的强悍能力，在这个方面，机器还远远比不过人类。但是在人类不擅长的指纹信息、贷款信息、生物学中的基因序列、蛋白表达总量，分析化学中的样品质谱等等领域，机器在分类、发现和识别特定的模式方面已经超越了人类。也正是因为这样，人类在刑侦案件，商业决策，科学研究中越来越注重数据的处理和挖掘，“大数据”的概念才越来越火。<br>&emsp;&emsp;机器学习并不是一个新鲜的概念，在文章的开头，我们可以看到1959年就有相关的论述了。今天，它受到这样的重视，除了计算能力的提升使得机器学习的算法获得了更好的表现以外，也有信息化在各行各业的发展导致的数据量激增的缘故。如何从这些数据中挖掘更多有意义的信息，指导我们更好的生产和研究，是我们关心的问题。而机器学习，正是解决这个问题利器。<br>&emsp;&emsp;当然，数据量的激增也为储存和处理这些信息带来得了巨大的挑战，这里面的事情，我们有时间再说吧！</p>
+<p>2017/4/16  凌晨1点</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hansen Zhao</p>
+              <p class="site-description motion-element" itemprop="description">Machine Learning & Coding</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/HansenZhao.github.io/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hansen Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

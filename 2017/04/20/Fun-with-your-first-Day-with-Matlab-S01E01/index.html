@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/HansenZhao.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/HansenZhao.github.io/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/HansenZhao.github.io/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/HansenZhao.github.io/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/HansenZhao.github.io/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/HansenZhao.github.io/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MATLAB," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言我打算写一系列关于MATLAB入门的文章。原因有二，一个是我发现身边很多搞科研的小伙伴有处理数据，实现算法的需求，但是却苦于没有办法入门一种处理数据的编程语言（或者说脚本语言吧）。虽然说市面上MATLAB入门的书籍很多，但是我等写代码的人总有一种“造轮子”的情怀，总觉得还不如自己搞的好，因此，还是按照自己的思路写一套入门的教程似的东西。二来嘛，也是自己觉得好玩咯。 这些文章适合谁正如上面所说的">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fun with your first Day with Matlab S01E01">
+<meta property="og:url" content="https://hansenzhao.github.io/2017/04/20/Fun-with-your-first-Day-with-Matlab-S01E01/index.html">
+<meta property="og:site_name" content="HansenZhao&#39;s Blog">
+<meta property="og:description" content="前言我打算写一系列关于MATLAB入门的文章。原因有二，一个是我发现身边很多搞科研的小伙伴有处理数据，实现算法的需求，但是却苦于没有办法入门一种处理数据的编程语言（或者说脚本语言吧）。虽然说市面上MATLAB入门的书籍很多，但是我等写代码的人总有一种“造轮子”的情怀，总觉得还不如自己搞的好，因此，还是按照自己的思路写一套入门的教程似的东西。二来嘛，也是自己觉得好玩咯。 这些文章适合谁正如上面所说的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://i4.buimg.com/567571/13f8358b92553488.png">
+<meta property="og:updated_time" content="2017-04-29T11:49:46.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fun with your first Day with Matlab S01E01">
+<meta name="twitter:description" content="前言我打算写一系列关于MATLAB入门的文章。原因有二，一个是我发现身边很多搞科研的小伙伴有处理数据，实现算法的需求，但是却苦于没有办法入门一种处理数据的编程语言（或者说脚本语言吧）。虽然说市面上MATLAB入门的书籍很多，但是我等写代码的人总有一种“造轮子”的情怀，总觉得还不如自己搞的好，因此，还是按照自己的思路写一套入门的教程似的东西。二来嘛，也是自己觉得好玩咯。 这些文章适合谁正如上面所说的">
+<meta name="twitter:image" content="http://i4.buimg.com/567571/13f8358b92553488.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/HansenZhao.github.io/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hansenzhao.github.io/2017/04/20/Fun-with-your-first-Day-with-Matlab-S01E01/"/>
+
+
+
+
+
+  <title>Fun with your first Day with Matlab S01E01 | HansenZhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/HansenZhao.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HansenZhao's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">| Share with ZhuangBiology</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/HansenZhao.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/HansenZhao.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/04/20/Fun-with-your-first-Day-with-Matlab-S01E01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Fun with your first Day with Matlab S01E01</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T22:54:54+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/MATLAB/" itemprop="url" rel="index">
+                    <span itemprop="name">MATLAB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我打算写一系列关于MATLAB入门的文章。原因有二，一个是我发现身边很多搞科研的小伙伴有处理数据，实现算法的需求，但是却苦于没有办法入门一种处理数据的编程语言（或者说脚本语言吧）。虽然说市面上MATLAB入门的书籍很多，但是我等写代码的人总有一种“造轮子”的情怀，总觉得还不如自己搞的好，因此，还是按照自己的思路写一套入门的教程似的东西。二来嘛，也是自己觉得好玩咯。</p>
+<h4 id="这些文章适合谁"><a href="#这些文章适合谁" class="headerlink" title="这些文章适合谁"></a>这些文章适合谁</h4><p>正如上面所说的，如果你已经有了MATLAB编程经验了，我只能说——大神求轻拍！</p>
+<h4 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h4><p>Matlab可以解释成Matrix Lab，直译成为矩阵实验室。它的计算是围绕着矩阵的，因此对向量化的计算支持很好（至于什么是向量化的计算，也许以后你就明白了吧…）。 据我所知，MATLAB，R语言，Python和Java都是比较流行的科学计算语言（加上Java是因为<a href="https://imagej.nih.gov/ij/" target="_blank" rel="external">ImageJ</a>的开发是使用Java的，而ImageJ在至少是生物化学学科的研究中，是有非常重要的地位的）。其中MATLAB，R以及Python都含有大量的程序包，使得你可以轻而易举的用一两行代码实现一些常用的算法和数据统计，非常适合快速的算法开发和验证，因此在学术研究中扮演了非常重要的作用。在实际的工业生产中，因为考虑到代码运行的效率的问题，可能会选择用更底层的语言如C++来作为最终产品的实现，但编程的思维和逻辑是不变的，这也是一些招聘岗位对掌握一门统计语言的应聘者比较青睐的原因吧。<br>实际上，上面说的都是废话，既然来看这篇文章，当然是本来就是下定决定学MATLAB的啦。</p>
+<h4 id="文章的结构"><a href="#文章的结构" class="headerlink" title="文章的结构"></a>文章的结构</h4><p>我希望能从浅入深的带领大家学习MATLAB脚本的书写，让大家感受到其中的乐趣。近来有一款非常流行的游戏叫我的世界(Minecraft)，这款游戏之所以风靡全球，就是因为它的玩法构建在非常简单的原理（方块堆叠）之上，却给了玩家极大的自由发挥的空间。更重要的是，不同的简单的方块的组合，形成了复杂而庞杂的结构，使得观者惊叹，制作者也获得了非常大的成就感。写代码也是这样的，再复杂的程序也不过是顺序执行、判断跳转和循环执行组合而成的，却产生了这么多拥有复杂而强大的功能的软件。当你开始写代码的时候，你的面前就是等待你创造的世界！<br>至于文章的结构嘛，还没有特别想好，一边写一边看吧！</p>
+<h4 id="准备什么"><a href="#准备什么" class="headerlink" title="准备什么"></a>准备什么</h4><p>一台电脑，我安装的是MATLAB R2016b，再加上你的热情，就可以开始啦！</p>
+<h3 id="熟悉MATLAB"><a href="#熟悉MATLAB" class="headerlink" title="熟悉MATLAB"></a>熟悉MATLAB</h3><h4 id="MATLAB的界面"><a href="#MATLAB的界面" class="headerlink" title="MATLAB的界面"></a>MATLAB的界面</h4><p>我在这里不想再赘述MATLAB的安装了，一般下载的源文件中都会有readme之类的文本教你怎样一步一步的安装MATLAB，这里就略过。<br>我们可以看一下MATLAB的界面：</p>
+<p><div align="center"><br><img src="http://i4.buimg.com/567571/13f8358b92553488.png" alt="“MATLAB的界面”"><br></div><br>其中包含了几个重要的部分：</p>
+<ol>
+<li>菜单栏：里面包含了很多功能，我们有机会慢慢讲述。软件的设置，新建脚本文件，函数，类文件都是在这里<br></li>
+<li>工作目录：和R，Python一样，MATLAB也有工作目录。工作目录有这样的几个含义，当你输出输入文件的时候，如果没有指明具体的路径，而是只给出了文件名，那么就默认从工作目录进行读取和输出。如果读取的时候没有找到文件，就会报错。另外，当你执行一个命令的时候，MATLAB会首先从已经加入到一个路径列表里面的那些路径中从上到下寻找你输入的命令对应的源代码文件，如果没有找到，就会从当前工作目录找。如果还找不到，就会报错。这就意味着，当你做一个项目写了很多函数的时候，只能在存放这些函数的目录下进行调用，否则就会找不到命令。当然，你还可以将写好的代码的路径添加到MATLAB中的路径表中，这样就可以在其他工作目录下调用自己写的代码了。这里要注意的是，如果自己写的代码中的函数或者类与MATLAB自带的函数或者类同名，那么<strong>MATLAB会先找到哪个就用哪个</strong>，无疑会带来很多不确定性。MATLAB的命名是大小写敏感的，因此，自己写的函数可以用特殊的命名方法或者改变大小写来避免与MATLAB自带的函数混淆。<br></li>
+<li>当前文件夹： 列出了当前工作目录下的文件，类似于Window的资源管理器<br></li>
+<li>命令行窗口：最为重要的窗口，输入命令和观察计算的结果都是在这里<br></li>
+<li>WorkSpace：显示了当前可以直接调用的计算中间值的名称和类型。譬如说你直接输入：<br><br>c = a + b;<br><br>这样会报错，说找不到a和b。因为你并没有声明a和b到底是什么，因此MATLAB就无法对他们进行运算。如果在命令行窗口输入<br><br>a = 1;<br><br>意味着你声明了一个变量a，值为1，这个a就会出现在WorkSpace中，从此以后你就可以随时调用。举一个不太恰当的例子，WorkSpace就好比是写作业时候的书桌一样，你首先要准备好要用的笔，橡皮，本子等等，相当于声明计算所需的变量。声明好以后，这些变量就像已经拿出来的笔、橡皮和本子一样可以随时使用。等到作业写完了，最好还要清理一下桌子上(WorkSpace)的杂物，让它保持整洁。<br></li>
+<li>历史记录：非常有用的一个窗口，如果你找不到这个窗口，可以在1中的菜单中找到Layout——Show——Command History——Docked来打开它。这里面记录了你输入的历史命令，当你需要进行很多重复性的工作的时候，可以直接复制这里面的内容，再做修改使用，提高效率。当然，最快的方法还是写一个批处理脚本咯。历史记录还有一个作用，当你处理玩数据以后，可以按住Shift点选一定范围内的所用命令，右键选择Create Script，将创建一个脚本文件。你可以保存这个脚本文件，当需要重现处理结果的时候可以参考之。最后，历史记录还支持Ctrl+F搜索。如果你忘了一条命令原来是怎么用的了，可以用这个方法检索过去你使用的记录。</li>
+</ol>
+<h4 id="高级的计算器"><a href="#高级的计算器" class="headerlink" title="高级的计算器"></a>高级的计算器</h4><p>为了熟悉MATLAB，我们可以先把它当做一个计算器来使用。这个高级的计算器可以识别你输入的表达式，并且计算出这个表达式的值：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; <span class="number">1</span>+<span class="number">2</span></div><div class="line">&gt;&gt; <span class="built_in">ans</span> = <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>我们可以看到MATLAB将表达式1+2的值正确的计算了出来，并给出了结果3。有趣的是，MATLAB的命令行窗口显示的是<em>ans=3</em>，再看看你的WorkSpace，是不是发现其中有一个名为ans的变量，显示值为3？这是因为MATLAB将这个表达式的计算结果默认的赋予给了变量<em>ans</em>。如果我们人为的指定计算结果赋予的对象，那么MATLAB就会将值赋予给我们指定的变量上：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; a = <span class="number">1</span>+<span class="number">2</span></div><div class="line">&gt;&gt; a = <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>再看Workspace，就会发现你设置的变量a以及它的值3了。现在我们每次输入一个命令，马上在命令行窗口就可以看到执行的结果，这在有些时候是非常麻烦的事情。解决的办法就是在命令之后加上英文的分号 ;<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; b = <span class="number">1</span>+<span class="number">2</span>;</div></pre></td></tr></table></figure></p>
+<p>这样就看不到计算的结果了。在Workspace里面你仍然可以看到创建的变量b，可见这样的命令与不加分号的时候结果是相同的。加分号的好处可以在这个例子中体现：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; vec = <span class="built_in">zeros</span>(<span class="number">100</span>,<span class="number">1</span>)</div></pre></td></tr></table></figure></p>
+<p>可以尝试一下上述命令的执行结果。上述命令的作用是产生一个100行1列的全零向量，通常用于一个数组的初始化，最后将这个向量赋予给变量vec，如果这个指令不加分号，那么就会在命令行窗口打印出来100行的0，非常的蛋疼，所以说，引号还是很有用的。<br>上面讲到的，如果我们不指定表达式的值赋予给谁，那么MATLAB就会默认的赋予给名为ans的变量。可见，ans这个词在MATLAB中是有特殊含义的，不能随便使用，这样的“保留”了特殊含义的单词还有很多：</p>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ans</td>
+<td>表达式值默认赋予对象</td>
+</tr>
+<tr>
+<td>pi</td>
+<td>圆周率常量</td>
+</tr>
+<tr>
+<td>eps</td>
+<td>微小的正值，常用于防止分母为0的情况</td>
+</tr>
+<tr>
+<td>i，j</td>
+<td>尽管可以任意负值，但常用于表示复数</td>
+</tr>
+<tr>
+<td>inf</td>
+<td>表示无穷大量，-inf表示负无穷</td>
+</tr>
+<tr>
+<td>nan</td>
+<td>表示Not a Number，一般永无表示解析失败的值</td>
+</tr>
+</tbody>
+</table>
+<p>在使用MATLAB计算表达式数值的时候，除了常用的加减乘除以外，还有其他的高级运算符<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = <span class="built_in">log</span>(<span class="number">10</span>); <span class="comment">%自然对数</span></div><div class="line">b = <span class="built_in">log10</span>(<span class="number">10</span>); <span class="comment">%以10为底的对数</span></div><div class="line">c = <span class="built_in">exp</span>(<span class="number">10</span>); <span class="comment">%自然常数的10次幂</span></div><div class="line">d = <span class="number">2</span>^<span class="number">3</span>; <span class="comment">%2的3次幂</span></div><div class="line">e = <span class="built_in">sin</span>(<span class="built_in">pi</span>); <span class="comment">%正弦</span></div><div class="line">f = <span class="built_in">cos</span>(<span class="built_in">pi</span>); <span class="comment">%余弦</span></div></pre></td></tr></table></figure></p>
+<p>等等，常见的数学运算一般都可以找到相应的符号来进行运算。<br>MATLAB还支持矩阵的运算。<strong>下面的例子里面，我们用大写字母表示矩阵，小写字母表示数字</strong><br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">A = <span class="built_in">zeros</span>(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">%创建2行3列的全零矩阵A</span></div><div class="line">A1 = A + <span class="number">1</span>; <span class="comment">%矩阵加上一个数字，相当于每一个矩阵元素加上这个数字</span></div><div class="line">A2 = A * <span class="number">5</span>；<span class="comment">%矩阵乘以一个数字，相当于每一个元素乘以这个数字</span></div><div class="line">B = <span class="built_in">ones</span>(<span class="number">3</span>,<span class="number">2</span>); <span class="comment">%创建3行两列的全一矩阵B</span></div><div class="line">A + B; <span class="comment">%错误，矩阵相加的时候需要两个矩阵具有相同的大小，结果是对应的元素相加</span></div><div class="line">A + B’; <span class="comment">%正确，单引号表示矩阵的转置，B通过转置就有了和A相同的大小，可以相加</span></div><div class="line">A * B’; <span class="comment">%错误，矩阵相乘需要满足数学上的需求，A右边乘的矩阵需要有三行，B的转置只有两行</span></div><div class="line">A * B; <span class="comment">%正确，符合矩阵乘法的要求，获得2行2列的结果</span></div><div class="line">A .* B'; <span class="comment">%正确，乘号前面加英文句号表示对应元素相乘，要求两个矩阵大小相同</span></div></pre></td></tr></table></figure></p>
+<p>向量的计算法则与矩阵相同，可见，MATLAB为矩阵的运算提供了很好的支持。那么问题来了，如果想要生成一个全部为9的3*2的矩阵怎么办？答案是：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">A = <span class="built_in">ones</span>(<span class="number">3</span>,<span class="number">2</span>) * <span class="number">9</span>;</div></pre></td></tr></table></figure></p>
+<p>是不是很简单？<br>最后，需要提醒大家注意的是，MATLAB中对于大小写敏感，也就是A和a是代表不同的东西的。另外，MATLAB输入的表达式需要用英文字符，如果使用中文字符将无法解析。<br>在上面的例子中，我们还使用了MATLAB中自带函数ones，zeros等才创建矩阵或者向量。其实，MATLAB中包含了大量的可以直接调用的函数。那么，是不是MATLAB高手就都会使用这些函数呢？对于常用的函数来说是的，但是，还有很多不常用的函数，它们的用法，除了上网搜索以外，MATLAB中还内置了doc文档提供详细的权威的解释，实在是学习MATLAB的好帮手。下一节，我们就来讲解如何使用doc文档。</p>
+<h4 id="资深的老师doc"><a href="#资深的老师doc" class="headerlink" title="资深的老师doc"></a>资深的老师doc</h4><p>不管是Python，R还是MATLAB，都内置了一个函数用于帮助使用者了解一个指令的用法和作用的。实际上，Windows的cmd控制台以及Linux的终端都是这样的。<br>在MATLAB中有两个函数，help和doc来完成这个功能，譬如说我们想要查找mean这个函数的用法<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; help mean</div><div class="line">&gt;&gt; mean   Average or mean value.</div><div class="line">    S = mean(X) is the mean value of the elements in X <span class="keyword">if</span> X is a vector. </div><div class="line">    For matrices, S is a row vector containing the mean value of each </div><div class="line">    column. </div><div class="line">    For N-D arrays, S is the mean value of the elements along the first </div><div class="line">    array dimension whose <span class="built_in">size</span> does not equal <span class="number">1.</span></div><div class="line"> </div><div class="line">    mean(X,DIM) takes the mean along the dimension DIM of X.</div><div class="line"> </div><div class="line">    S = mean(...,TYPE) specifies the type in which the mean is performed, </div><div class="line">    and the type of S. Available options are:</div><div class="line"> </div><div class="line">    <span class="string">'double'</span>    -  S has class double <span class="keyword">for</span> any input X</div><div class="line">    <span class="string">'native'</span>    -  S has the same class as X</div><div class="line">    <span class="string">'default'</span>   -  If X is floating point, that is double or single,</div><div class="line">                   S has the same class as X. If X is not floating point, </div><div class="line">                   S has class double.</div><div class="line"> </div><div class="line">    S = mean(...,NANFLAG) specifies how NaN (Not-A-Number) values are </div><div class="line">    treated. The default is <span class="string">'includenan'</span>:</div><div class="line"> </div><div class="line">    <span class="string">'includenan'</span> - the mean of a vector containing NaN values is also NaN.</div><div class="line">    <span class="string">'omitnan'</span>    - the mean of a vector containing NaN values is the mean </div><div class="line">                   of all its non-NaN elements. If all elements are NaN,</div><div class="line">                   the result is NaN.</div><div class="line"> </div><div class="line">    Example:</div><div class="line">        X = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>; <span class="number">3</span> <span class="number">3</span> <span class="number">6</span>; <span class="number">4</span> <span class="number">6</span> <span class="number">8</span>; <span class="number">4</span> <span class="number">7</span> <span class="number">7</span>]</div><div class="line">        mean(X,<span class="number">1</span>)</div><div class="line">        mean(X,<span class="number">2</span>)</div><div class="line"> </div><div class="line">    Class support <span class="keyword">for</span> input X:</div><div class="line">       float: double, single</div><div class="line">       integer: uint8, int8, uint16, int16, uint32,</div><div class="line">                int32, uint64, int64</div><div class="line"> </div><div class="line">    See also median, std, min, max, var, cov, mode.</div><div class="line"></div><div class="line">    Reference page <span class="keyword">for</span> mean</div><div class="line">    Other functions named mean</div></pre></td></tr></table></figure></p>
+<p>我们可以看到，在使用help指令以后，命令行窗口打印出来了一段关于mean函数的描述。包括函数作用的概述（Average or mean value），函数的使用方法，每一个输入和输出函数的作用等等，非常的详尽。最后还给出了使用的例子，相当于一个电子版的API（Application Programming Interface）速查手册,非常之方便。<br>还可以看到后面有一行 See also…，这是MATLAB为你推荐的其他相关的函数，对于mean来说，包括了中位数函数median，标准差std，最大值与最小值，方差，协方差和众数mode函数，对于学习和了解更多命令非常有帮助。<br>然后是Reference page for mean这个超链接，点击以后来到一个类似于网页的东西，里面提供了更为详尽的关于mean函数的内容，非常有用，这个效果和直接使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">doc mean</div></pre></td></tr></table></figure></p>
+<p>是相同的，在文档里面查看函数的用法，界面更加漂亮好看，内容也更加丰富。这个文档在MATLAB的官方网站上也是提供的。MATLAB的某些版本可能不提供本地的doc文档。<br>最后还有一个很重要的是Other functions named mean，这意味着mean函数在MATLAB中不止有一个。还记得前面我们说的MATLAB搜寻函数的方式吗？MATLAB先在内部的路径列表中依次寻找你输入的指令，用找到的第一个作为指令的解析方式。但是，如果这个指令不是你需要的呢？这个时候就可能造成错误。如果你发现你使用的指令输出的结果与你预想的不同，那么请输入<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; help 指令名</div></pre></td></tr></table></figure></p>
+<p>来检查MATLAB是否是使用了你需要的指令，如果没有，请点击Other functions named 指令名 来寻找想要的指令吧！</p>
+<h4 id="多说几句"><a href="#多说几句" class="headerlink" title="多说几句"></a>多说几句</h4><p>写到这里，基本上这篇文章也该结束了。但是还想说些乱七八糟的东西。譬如说玩到现在，你的命令窗口和workspace应该已经很乱了吧，这个时候可以执行<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; clc</div></pre></td></tr></table></figure></p>
+<p>来清空命令行窗口中的东西。还可以使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; clear all</div></pre></td></tr></table></figure></p>
+<p>来清空工作区间中的东西。<br>另外，总有人问我说怎么样才能更快更好的学习编写代码，我自己的经验是一定要上手实际的去写命令，实现一定的功能，也就是实战啦。编程是一门实践性很强的技术，即使是有经验的程序员，如果长时间不写代码一定会手生的，所以请多加练习吧（日语翻译风）！<br>从下一节开始，我将以解决实际问题的角度来教大家写一个函数。程序中的函数和数学上的函数有一定的联系但是也有很大的差异。程序中的函数是指一段可以重复调用的，接受输入或者不接受输入，按照一定的顺序进行运算的代码段，函数的使用可以减少编码中重复的编写相同的逻辑，还可以通过函数名的命名提高程序的可读性。<br>我自己喜欢写程序的一个原因就是每次调用自己写好的函数的时候都特别有成就感。函数将具体的实现过程隐藏起来，使你可以很方便的使用它所有的功能。就好比你做了一个好用的工具，每次干活的时候用你的工具来做，特别方便好用，固然是有成就感。看起来枯燥的编码就是将复杂的问题分解为一个个简单的小功能，再把每个小功能用函数实现，每一步都伴随着一点点的成就感。最后再将这些函数按照算法的逻辑组合调用，就形成了复杂神奇的程序。<br>说了这么多，是不是也变得期待起来了呢？我们下次再见吧！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/HansenZhao.github.io/tags/MATLAB/" rel="tag"># MATLAB</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HansenZhao.github.io/2017/04/20/三面骰/" rel="next" title="三面骰">
+                <i class="fa fa-chevron-left"></i> 三面骰
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HansenZhao.github.io/2017/05/01/Fun-with-your-first-Day-with-Matlab-S01E02/" rel="prev" title="Fun with your first daty with Matlab S01E02">
+                Fun with your first daty with Matlab S01E02 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hansen Zhao</p>
+              <p class="site-description motion-element" itemprop="description">Machine Learning & Coding</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/HansenZhao.github.io/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这些文章适合谁"><span class="nav-number">1.1.</span> <span class="nav-text">这些文章适合谁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MATLAB"><span class="nav-number">1.2.</span> <span class="nav-text">MATLAB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章的结构"><span class="nav-number">1.3.</span> <span class="nav-text">文章的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准备什么"><span class="nav-number">1.4.</span> <span class="nav-text">准备什么</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟悉MATLAB"><span class="nav-number">2.</span> <span class="nav-text">熟悉MATLAB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MATLAB的界面"><span class="nav-number">2.1.</span> <span class="nav-text">MATLAB的界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级的计算器"><span class="nav-number">2.2.</span> <span class="nav-text">高级的计算器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资深的老师doc"><span class="nav-number">2.3.</span> <span class="nav-text">资深的老师doc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多说几句"><span class="nav-number">2.4.</span> <span class="nav-text">多说几句</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hansen Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/HansenZhao.github.io/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/HansenZhao.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/HansenZhao.github.io/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/HansenZhao.github.io/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/HansenZhao.github.io/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/HansenZhao.github.io/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/HansenZhao.github.io/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MATLAB," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="概括上一节当中我们说到了如何使用MATLAB作为高级的计算器，事实上，数据处理的过程就是对“数字”进行计算从而获取有意义的信息的过程。理论上来讲，如果时间足够多，我们就可以使用计算器手工计算处理任何的数据。然而，这种方式太过繁琐，如果要处理成千上万条数据记录，还不是要被累死!更重要的是，处理这些数据的方法大多数情况下都是固定的，重复的。对于这种由明确定义的，固定的，重复的工作，交给计算机程序来做真">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fun with your first daty with Matlab S01E02">
+<meta property="og:url" content="https://hansenzhao.github.io/2017/05/01/Fun-with-your-first-Day-with-Matlab-S01E02/index.html">
+<meta property="og:site_name" content="HansenZhao&#39;s Blog">
+<meta property="og:description" content="概括上一节当中我们说到了如何使用MATLAB作为高级的计算器，事实上，数据处理的过程就是对“数字”进行计算从而获取有意义的信息的过程。理论上来讲，如果时间足够多，我们就可以使用计算器手工计算处理任何的数据。然而，这种方式太过繁琐，如果要处理成千上万条数据记录，还不是要被累死!更重要的是，处理这些数据的方法大多数情况下都是固定的，重复的。对于这种由明确定义的，固定的，重复的工作，交给计算机程序来做真">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-27T12:24:35.653Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fun with your first daty with Matlab S01E02">
+<meta name="twitter:description" content="概括上一节当中我们说到了如何使用MATLAB作为高级的计算器，事实上，数据处理的过程就是对“数字”进行计算从而获取有意义的信息的过程。理论上来讲，如果时间足够多，我们就可以使用计算器手工计算处理任何的数据。然而，这种方式太过繁琐，如果要处理成千上万条数据记录，还不是要被累死!更重要的是，处理这些数据的方法大多数情况下都是固定的，重复的。对于这种由明确定义的，固定的，重复的工作，交给计算机程序来做真">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/HansenZhao.github.io/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hansenzhao.github.io/2017/05/01/Fun-with-your-first-Day-with-Matlab-S01E02/"/>
+
+
+
+
+
+  <title>Fun with your first daty with Matlab S01E02 | HansenZhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/HansenZhao.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HansenZhao's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">| Share with ZhuangBiology</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/HansenZhao.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/HansenZhao.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/05/01/Fun-with-your-first-Day-with-Matlab-S01E02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Fun with your first daty with Matlab S01E02</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-01T23:32:35+08:00">
+                2017-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/MATLAB/" itemprop="url" rel="index">
+                    <span itemprop="name">MATLAB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h3><p>上一节当中我们说到了如何使用MATLAB作为高级的计算器，事实上，数据处理的过程就是对“数字”进行计算从而获取有意义的信息的过程。理论上来讲，如果时间足够多，我们就可以使用计算器手工计算处理任何的数据。然而，这种方式太过繁琐，如果要处理成千上万条数据记录，还不是要被累死!更重要的是，处理这些数据的方法大多数情况下都是固定的，重复的。对于这种由明确定义的，固定的，重复的工作，交给计算机程序来做真是最好不过了。幸运的是，有很多数据处理的任务都是这样的。使用计算机语言批量的执行任务，我们需要写“脚本”。脚本(Script)就是一组指令，写好以后计算机会按照顺序依次执行，而不需要有人在一旁看管，实在是非常方便。那么我们就开始学习如何写MATLAB的脚本吧！</p>
+<h3 id="MATLAB中的数据类型"><a href="#MATLAB中的数据类型" class="headerlink" title="MATLAB中的数据类型"></a>MATLAB中的数据类型</h3><p>数据类型是计算机程序中非常重要的概念。计算机工作的原理就是对数据进行操作，因此数据类型应该是非常基础和重要的东西啦！学过C语言的同学可能还记得，C语言中有整形变量(int:0,1,2,3…), 单精度浮点类型(float:1.0,1.2….)等等数据类型。像C语言这样的，在声明变量之前，首先要声明变量类型的语言，被称为【强类型语言】。例如<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">0</span>;<span class="comment">//声明变量i为整型变量，初始值为0</span></div></pre></td></tr></table></figure></p>
+<p>MATLAB的脚本语言，在声明变量的时候并不需要声明类型，而是由解释器（将MATLAB脚本进一步解释为计算机能够理解的指令的东西）决定变量的类型，这样的语言被称为【弱类型语言】。最近火热的Python也是弱类型语言哦。弱类型语言实际上是方便使用者，也就是编程人员，的一项设计。不过相比与类型严格的强类型语言，在使用弱类型语言的时候，有可能会渐渐忘记或者搞混变量的类型，引发程序错误。如果错误在运行时被发现的话，还是很好的。可是，如果在运行时因为类型错误而进行了错误的计算，解释器并没有因此报告错误的话，是可能使处理出来的数据完全没有意义的。因此，在完成复杂的程序编写以后进行测试以便确定算法的正确性是一个非常重要的好习惯。为了保持这样的习惯，你需要在下意识里“质疑”自己写的程序。</p>
+<h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><p>上一节我们讲到，MATLAB可以被认为是Matrix Lab的缩写，可见，矩阵在MATLAB中的重要地位。 矩阵可以类比于C语言中的数组，是包含一组<strong>同类</strong>数据的<strong>容器</strong>。【容器】在计算机术语里面称为Container。正如其名，是包含一组数据的结构。MATLAB中的矩阵的特点是只能包含同类型的数据，除了数学上的数字以外，还可以包含字符串，引用等等。矩阵的数据结构还可以让我们轻易的进行高效的矩阵运算，如矩阵乘法，转置，求逆等等。使用矩阵的思维进行数据处理，还可以大大加快程序运行的速度，这样的技术被称为“向量化”。我在自己的工作中，超过一半的计算都是通过矩阵进行的。</p>
+<h5 id="矩阵基础"><a href="#矩阵基础" class="headerlink" title="矩阵基础"></a>矩阵基础</h5><p>矩阵是有【维度】的，这个维度就是指矩阵的大小。在MATLAB中，我们可以通过size函数获取矩阵的大小。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">x = <span class="built_in">rand</span>(<span class="number">5</span>); <span class="comment">%创建5x5的矩阵</span></div><div class="line">[nr,nc] = <span class="built_in">size</span>(x)</div><div class="line">nr = </div><div class="line"><span class="number">5</span></div><div class="line">nc = </div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p>上面的代码中我们使用rand函数创建了一个5x5的随机数矩阵，使用size函数可以获取矩阵的行数和列数。值得注意的是，在编写程序或者脚本的时候，变量的命名非常重要。因为程序是写给人看的，而不是给计算机看的。因此，使用良好的变量命名规范，可以使得程序的【可读性】变得更好，方便自己和他人阅读程序。这里，nr和nc是常用的矩阵大小变量命名，是number of row以及number of column的缩写。不同的语言的变量命名也不尽相同，Python的变量命名非常喜欢使用下划线_，因此，同样含义的变量可能会被命名为num_row以及num_col。如果我们希望只得到矩阵的行数，可以使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nr = <span class="built_in">size</span>(x,<span class="number">1</span>);</div><div class="line">[nr,~] = <span class="built_in">size</span>(x);</div></pre></td></tr></table></figure></p>
+<p>这两种写法。其中，第一种写法使用了size函数的可变参数的功能。可变参数是指一个函数可以输入多种可能数量的参数，并因此而改变函数的行为。MATLAB中大多数函数都是有可变数量参数的，这样设计的目的是为了既保证函数调用的简洁性，又保持函数调用的灵活性。<br>怎么理解呢？譬如说我们现在有一个add函数，作用是给传入的参数加上一个值。我们在使用的过程中发现，大多数情况下，我们都是给传入参数加上1的，因此，我们可以把add函数设计为一个可变参数的函数。当调用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">add(x);</div></pre></td></tr></table></figure></p>
+<p>时，函数的行为是返回x+1的值。当调用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">add(x,a)</div></pre></td></tr></table></figure></p>
+<p>时，函数的行为是返回x+a的值。这样在大多数情况下我们都可以按照前者的方式调用函数，非常的简洁方便。可是我们需要使用add函数提供的更灵活的功能时，例如加上a，我们又可以按照后者的方式进行调用。这就是所谓的既保证函数调用的简洁性，又保持函数调用的灵活性，是不是很方便呢？在这个例子里，add函数的第一个参数是必要的，否则就不知道在谁的基础上做加法了。第二个参数是可选参数，可以指定，如果没有指定就使用默认值。<br>size函数调用的第一种写法中第二个参数1就是可选的参数。它代表传入的矩阵的轴的次序。1是指列，2则是指行。在matlab中的矩阵，因为常常与数据处理相关，因此矩阵的行往往表示<strong>观测结果</strong>，列往往表示<strong>观测的维度</strong>。譬如我们对小学生早晨上学这个事情进行观测，那么默认我们的数据集矩阵的行是上学的每一个小学生，列则是相应学生的身高，体重等等信息。<br>第二种获取矩阵大小的方式我们使用了符号~。“~”代表我们在之后的计算中不需要使用相应位置的变量。这使得matlab脚本在执行的时候不在为这部分数据分配储存空间，因此在程序运行的效率上会更好一些。</p>
+<h5 id="创建矩阵"><a href="#创建矩阵" class="headerlink" title="创建矩阵"></a>创建矩阵</h5><p>我们常常需要创建新的矩阵，新矩阵的创建有很多种方法<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = <span class="built_in">zeros</span>(<span class="number">5</span>) <span class="comment">%创建5行5列的零矩阵</span></div><div class="line">a = <span class="built_in">zeros</span>(<span class="number">5</span>,<span class="number">3</span>) <span class="comment">%创建5行3列的零矩阵</span></div><div class="line">a = <span class="built_in">zeros</span>(<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>) <span class="comment">%创建5行3列2层的零矩阵</span></div></pre></td></tr></table></figure></p>
+<p>类似的，我们还有<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = <span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的全1矩阵</span></div><div class="line">a = <span class="built_in">nan</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的全无效数字矩阵</span></div><div class="line">a = <span class="built_in">rand</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的随机矩阵</span></div><div class="line">a = <span class="built_in">randn</span>(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">%创建5行1列的正态分布随机矩阵</span></div><div class="line">a = <span class="built_in">eye</span>(<span class="number">5</span>) <span class="comment">%创建5阶单位矩阵</span></div></pre></td></tr></table></figure></p>
+<p>我们也可以直接创建矩阵，使用中括号表示矩阵的起始，逗号或者空格表示矩阵的行间隔，分号表示列间隔。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = </div><div class="line">[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></div><div class="line">  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span></div><div class="line">  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>还可以使用冒号：操作符建立等差的行向量（1行n列的矩阵），例如<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">1</span>:<span class="number">1</span>:<span class="number">10</span> <span class="comment">%建立一个以1为始，1为步长，10为终止的行向量</span></div></pre></td></tr></table></figure></p>
+<p>当步长为1的时候，也可以省略，直接用1:10表示起始位置。<strong>注意,MATLAB中所使用的符号均为英文符号！</strong></p>
+<h5 id="元素操作"><a href="#元素操作" class="headerlink" title="元素操作"></a>元素操作</h5><p>创建矩阵以后，我们还需要对元素进行操作。这些操作主要包括索引和赋值。索引就是通过编号来查找矩阵中某一个位置的元素的值，赋值就是改变某一个位置元素的值。<br>矩阵是通过行列来进行索引的，索引用括号表示，括号内可以使用逗号进行分割，表示行或者列的区别。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div><div class="line">x = a(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">% 索引矩阵a的1行2列的数值</span></div><div class="line">x = <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>MATLAB中存储矩阵数据是按照列存储的，因此也可以使用序号对矩阵数据进行索引，因为MATLAB的序号是以1开头的，因此需要的最大值是行数*列数。这种索引方法并不推荐，因为并不直观，容易出BUG，但是介绍这种方法的意义在于写代码的时候有时会因为不注意而忘记写行列索引中的逗号，这种情况下MATLAB可能仍然执行代码，只不过是按照上面介绍的序号索引取值，而不会引发错误警告。在这种情况下，计算实际上是错误的，因为你索引到的数据并不是你想要的，然而MATLAB的解释器并不会发现这个错误，因而是十分危险的。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">x = a(<span class="number">3</span>) <span class="comment">%索引矩阵a的第3个值</span></div><div class="line">x = <span class="number">7</span></div><div class="line">x = a(<span class="number">8</span>) <span class="comment">%索引矩阵a的第8个值</span></div><div class="line">x = <span class="number">6</span></div></pre></td></tr></table></figure></p>
+<p>同时，我们也可以向量化的进行索引，冒号在这里表示在相应的维度取所有有效的值<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = a([<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>) <span class="comment">%索引矩阵a的第1,2行，第3列的值</span></div><div class="line">x = [<span class="number">3</span></div><div class="line">     <span class="number">6</span>]</div><div class="line">x = a(<span class="number">3</span>,:) <span class="comment">%索引矩阵a的第3行，所有列的值</span></div><div class="line">x = [<span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>end在索引中代表相应维度的最后一个有效的序号<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x = a(<span class="keyword">end</span>,<span class="number">3</span>) <span class="comment">%索引矩阵a最后一行，第三列的值</span></div></pre></td></tr></table></figure></p>
+<p>索引中还有一个很重要的方法叫做逻辑索引。在实际应用中，这种索引方式非常方便，可以使得代码更简洁，运行速度也更快。逻辑索引是在索引的位置不传入索引的需要（如第1行，第3列等），而是传入一个与被索引矩阵相应维度等长的逻辑数组，其中每个逻辑元素表示相应的位置是否会被索引到，如果为True就表示索引到，反之则为被忽略掉。例如，我们对一个随机向量r,想要获取数值大于0.5的所有值，可以这样操作<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">r = <span class="built_in">rand</span>(<span class="number">10</span>,<span class="number">1</span>) <span class="comment">%建立[0,1]均匀分布的10行列向量</span></div><div class="line">logicTag = r &gt; <span class="number">0.5</span> <span class="comment">%获取元素是否大于0.5的逻辑向量，向量大小与r相同</span></div><div class="line">x = r(logicTag)</div></pre></td></tr></table></figure></p>
+<p>在实际应用中这种方式非常有用，例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">t = importdata(<span class="string">'sales.csv'</span>) <span class="comment">%一个3列的表格，每一列分别表示 商品出售时间，商品价格，商品折扣</span></div><div class="line">logicTag = t(:,<span class="number">2</span>) &gt; <span class="number">10</span> <span class="comment">%获取商品价格大于10的逻辑向量</span></div><div class="line">saleTime = t(logicTag,<span class="number">1</span>) <span class="comment">%获取商品价格大于10的商品的出售时间</span></div></pre></td></tr></table></figure></p>
+<p>在上面的例子中我们非常方便的获取了商品价格大于10的商品的出售时间，而不需要循环判断。<br>元素操作的另一个重要方面是元素的赋值。上面我们进行取值的时候，元素的索引放在了等号的右边。当进行元素赋值的时候，索引就放在等号的左边来告诉MATLAB的解释器将数值赋值给哪些元素。例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div><div class="line">a(<span class="number">1</span>,<span class="number">3</span>) = <span class="number">0</span> <span class="comment">%将1行3列的元素赋值为0</span></div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">0</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>赋值的时候有两种赋值的形式。一种是按照元素赋值，一种是广播赋值。<br>按照元素赋值的时候，等号的左右两边必须是维度相同的矩阵，例如<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a(<span class="number">1</span>,:) = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]; <span class="comment">%正确，等号左右两边都是1行3列</span></div><div class="line">a(<span class="number">1</span>,:) = [<span class="number">0</span>;<span class="number">0</span>;<span class="number">0</span>]; <span class="comment">%报错，等号的左边是1x3向量，右边是3x1向量</span></div></pre></td></tr></table></figure></p>
+<p>另外一种赋值的方法是广播赋值，顾名思义，在这种形式下，等号右边是单一数值，数值将赋值给左边表示的矩阵的任意一个元素，例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div><div class="line">a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div><div class="line">a(<span class="number">1</span>,:) = <span class="built_in">inf</span></div><div class="line">a = [inf inf inf</div><div class="line">     <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">     <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>无穷大inf这个值就赋予了左边a矩阵的1行所有列的所有位置上<br>上面学的索引的方法在赋值的时候都可以使用，因此我们可以快速的实现很多效果，比如有两个等长的向量a和b，我们希望将a中大于0的数字都替换成对应位置的b的数字，可以这样：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bLogic = a &gt; <span class="number">0</span>;</div><div class="line">a(bLogic) = b(bLogic);</div></pre></td></tr></table></figure></p>
+<p>是不是很方便呢？</p>
+<h5 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h5><p>矩阵的运算非常多，这里介绍主要的几种。<br><strong>转置</strong>：矩阵的转置是常见的矩阵运算，数学中的转置用T来表示，在MATLAB中，用英文中的一撇来表示<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">A = A';</div></pre></td></tr></table></figure></p>
+<p>矩阵的转置除了本来的数学意义以外，很多情况下也用来将原始的数据进行转置以满足一些函数的输入需求，某些函数要求输入的数据是行向量或者列向量的形式。<br><strong>统计计算</strong>：统计计算中经常要求计算最大值，最小值，标准差等等统计量。这些统计量的计算在MATLAB中都有具体的函数，以max函数为例：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>; <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>; <span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line">b = max(a) <span class="comment">%默认，按列取最大值</span></div><div class="line">b = <span class="number">7</span> <span class="number">8</span> <span class="number">9</span></div><div class="line">b = max(a,[],<span class="number">2</span>) <span class="comment">%按行取最大值</span></div><div class="line">b = [ <span class="number">3</span></div><div class="line">      <span class="number">6</span></div><div class="line">      <span class="number">9</span>]</div></pre></td></tr></table></figure></p>
+<p>因为MATLAB的逻辑中，行代表观测的样本，列代表观测特征，因此在默认情况下，统计函数都是对列进行计算，也就是对观测的特征进行计算。也可以通过输入特别的参数来指定特定的计算维度。如果想要得到一个矩阵的最大值怎么办呢？<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b = max(max(a)) <span class="comment">%naive的方法</span></div><div class="line">b = max(a(:)) <span class="comment">%高级的方法</span></div></pre></td></tr></table></figure></p>
+<p>a(:)的方法可以将矩阵a完全向量化为一个列向量,因此使用一次，max函数就可以得到整个矩阵的最大值。<br><strong>数值计算</strong><br>矩阵可以直接与一个数值进行加减乘除，结果是矩阵中每一个元素对这个数值进行加减乘除；矩阵相互之间可以相互加减，要求是相互加减的矩阵维度大小相同，例如其中一个矩阵是3x5的矩阵，另一个矩阵也必须是3x5.矩阵之间也可以相互乘除，要求也线性代数的一样。<br>那么，如果想要让矩阵中每一个元素分别乘除另一个矩阵中对应的元素怎么办呢？只要在乘除符号前加上英文的.就可以。.*和./代表的含义就是逐元素的乘和除。此时要求两个矩阵对应维度大小相同，与矩阵相互加减的情况相同。</p>
+<p>这里举一个例子，在数据分析中有一个常见的需求是对各个观测量的数值进行归一化，也就是让各个观测维度的数值均值为0，方差为1。这样做的好处是使得各个观测的特征对数据分布的贡献相同。这样讲有点抽象，我们再举一个实际例子，譬如说我们对房价的一个观测：</p>
+<table>
+<thead>
+<tr>
+<th>样本序号</th>
+<th>与中心城区距离</th>
+<th>面积</th>
+<th>价格</th>
+<th>层高</th>
+<th>客厅面积与卧室面积之比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>50</td>
+<td>100</td>
+<td>1000000</td>
+<td>20</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>80</td>
+<td>2000000</td>
+<td>15</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>在这个例子里面一个房子就是一个观测样本，房子的面积、价格等等都是对于这个样本的观测属性，或者说是特征。不同的特征，数值范围不同。在这个例子当中，房价这个特征数值最大，客厅卧室面积之比这个特征数值最小。可是如果不做处理，价格这个特征的变化量在数值上要远远大于面积之比的变化量，这样就可能掩盖后者变化造成的影响。为了在数值上让不同的特征的变化有相同的权重，就需要做归一化。也就是让不同的特征在所有样本上的值均值为0，方差为1。在数学上，假设某个维度用$X$表示，$X_i$表示第i个观测值，$\mu_x$表示$X$的均值，$\sigma_x$表示$X$的标准差,使用$X_i^{transformed}$表示转换以后的特征数值。那么可以使用<br>$$X_i^{transformed}=\frac{X_i-\mu_x}{\sigma_x}$$<br>这个公式进行归一化转换。假设我们我们这个观测的表是x，一个最为naive的操作是：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[nr,nc] = <span class="built_in">size</span>(x); <span class="comment">%获取行数和列数</span></div><div class="line"><span class="keyword">for</span> m = <span class="number">1</span>:nc <span class="comment">%对于每一列</span></div><div class="line">    rowMean = mean(x(:,m));</div><div class="line">    rowStd = std(x(:,m));</div><div class="line">    <span class="keyword">for</span> n = <span class="number">1</span>:nr <span class="comment">%对于每一行</span></div><div class="line">        x(n,m) = (x(n,m) - rowMean)/rowStd;</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>另一种操作是通过向量化的方式，其中repmat的作用是将一个矩阵重复堆叠。repmat(x,2,1)的含义是将x矩阵当做一个元素堆叠为两行一列，如果x的的维度是mxn，那么堆叠以后就会成为(2*m)xn的矩阵。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">L = <span class="built_in">size</span>(x,<span class="number">1</span>); <span class="comment">%获取x表格的长度/矩阵的行数</span></div><div class="line">xMean = mean(x); <span class="comment">%获取x的各个维度(各列)的平均值</span></div><div class="line">xStd = std(x); <span class="comment">%获取x的各个维度(各列)的标准差</span></div><div class="line">x = (x - <span class="built_in">repmat</span>(xMean,L,<span class="number">1</span>))./<span class="built_in">repmat</span>(xStd,L,<span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>那么关于向量数据结构的讲解就到这里吧！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/HansenZhao.github.io/tags/MATLAB/" rel="tag"># MATLAB</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HansenZhao.github.io/2017/04/20/Fun-with-your-first-Day-with-Matlab-S01E01/" rel="next" title="Fun with your first Day with Matlab S01E01">
+                <i class="fa fa-chevron-left"></i> Fun with your first Day with Matlab S01E01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HansenZhao.github.io/2017/05/26/科学与复杂性-Science-and-Complexity/" rel="prev" title="科学与复杂性(Science and Complexity)">
+                科学与复杂性(Science and Complexity) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hansen Zhao</p>
+              <p class="site-description motion-element" itemprop="description">Machine Learning & Coding</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/HansenZhao.github.io/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概括"><span class="nav-number">1.</span> <span class="nav-text">概括</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MATLAB中的数据类型"><span class="nav-number">2.</span> <span class="nav-text">MATLAB中的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#矩阵基础"><span class="nav-number">2.1.1.</span> <span class="nav-text">矩阵基础</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建矩阵"><span class="nav-number">2.1.2.</span> <span class="nav-text">创建矩阵</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#元素操作"><span class="nav-number">2.1.3.</span> <span class="nav-text">元素操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#矩阵运算"><span class="nav-number">2.1.4.</span> <span class="nav-text">矩阵运算</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hansen Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/HansenZhao.github.io/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
