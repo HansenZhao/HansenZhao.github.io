@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/HansenZhao.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/HansenZhao.github.io/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/HansenZhao.github.io/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/HansenZhao.github.io/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/HansenZhao.github.io/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/HansenZhao.github.io/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MATLAB," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言这篇文章主要讲生物化学的基础研究和技术应用中产生的数据与机器学习的结合。实际上，在我看过的文献里面，这两者的结合早已有之，并不是什么新鲜的事情，至少20世纪90年代就有相关的工作，这也和人工智能等概念的几起几落相关。近年来，这种相互结合的趋势愈加明显，部分的原因可能也是机器学习和大数据等概念的兴起，但除此之外，生物化学的研究本身的趋势也愈加的需要这样的技术。 我们研究基础科学，涉及的主要认为有">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生物化学方向数据分析与机器学习">
+<meta property="og:url" content="https://hansenzhao.github.io/2017/12/30/生物化学方向数据分析与机器学习/index.html">
+<meta property="og:site_name" content="HansenZhao&#39;s Blog">
+<meta property="og:description" content="前言这篇文章主要讲生物化学的基础研究和技术应用中产生的数据与机器学习的结合。实际上，在我看过的文献里面，这两者的结合早已有之，并不是什么新鲜的事情，至少20世纪90年代就有相关的工作，这也和人工智能等概念的几起几落相关。近年来，这种相互结合的趋势愈加明显，部分的原因可能也是机器学习和大数据等概念的兴起，但除此之外，生物化学的研究本身的趋势也愈加的需要这样的技术。 我们研究基础科学，涉及的主要认为有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-30T14:56:49.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生物化学方向数据分析与机器学习">
+<meta name="twitter:description" content="前言这篇文章主要讲生物化学的基础研究和技术应用中产生的数据与机器学习的结合。实际上，在我看过的文献里面，这两者的结合早已有之，并不是什么新鲜的事情，至少20世纪90年代就有相关的工作，这也和人工智能等概念的几起几落相关。近年来，这种相互结合的趋势愈加明显，部分的原因可能也是机器学习和大数据等概念的兴起，但除此之外，生物化学的研究本身的趋势也愈加的需要这样的技术。 我们研究基础科学，涉及的主要认为有">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/HansenZhao.github.io/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hansenzhao.github.io/2017/12/30/生物化学方向数据分析与机器学习/"/>
+
+
+
+
+
+  <title>生物化学方向数据分析与机器学习 | HansenZhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/HansenZhao.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HansenZhao's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Share with ZhuangBiology</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/HansenZhao.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/HansenZhao.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/HansenZhao.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2017/12/30/生物化学方向数据分析与机器学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/zhs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">生物化学方向数据分析与机器学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-30T13:00:00+08:00">
+                2017-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/General-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">General Science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章主要讲生物化学的基础研究和技术应用中产生的数据与机器学习的结合。实际上，在我看过的文献里面，这两者的结合早已有之，并不是什么新鲜的事情，至少20世纪90年代就有相关的工作，这也和人工智能等概念的几起几落相关。近年来，这种相互结合的趋势愈加明显，部分的原因可能也是机器学习和大数据等概念的兴起，但除此之外，生物化学的研究本身的趋势也愈加的需要这样的技术。</p>
+<p>我们研究基础科学，涉及的主要认为有：客观的观测与描述，抽象模型和解释，预测以及干预。科学走到今天，不同的领域有不同的发展，基础物理和高能物理现在还在寻找一些方法间接的观测例如“暗物质”或者某种预言的粒子之类的东西，包括近来观测到的引力波等等，都是在寻找方法对系统进行观测。反过来，如有机合成等学科，已经建立了一套方法体系，控制有机反应，使得我们可以理性的设计合成路线，获得我们想要的产物，对有机产物结构的观测手段如质谱等，已经在过去多次获得诺贝尔奖。可见，【客观的观测与描述】一个体系这件事情，尽管是科学定量研究的第一步，但是仍然是非常重要且大有可为的一个领域。</p>
+<p>在对生命科学体系以及化学体系的研究中，分析手段大部分就是做的客观的观测与描述的工作。这部分工作尽管已经取得了长足的进步，但是还有很多问题没有解决。如何从静态的观测走向动态的观测；在空间尺度和时间尺度上，如何尽可能准确的观测到尽可能微小的差异；如何观测和分析复杂的多组分相互作用的体系等等</p>
+<p>我们客观的观测和描述研究的对象，基本的方法就是通过检测器检测信号，获取数据，我们认为，数据是脱离主观的，是对被观测食物的客观反映。然后再进一步的从数据中提取信息，进行分析和描述，最终获得对研究对象的理解和新的知识。因此，对于数据中包含的信息的提取，分析和描述是一道连接实验数据与我们最终目标——对体系的理解和获取新的知识的桥梁，不得不说是非常重要的。当我们研究的体系比较简单，数据量较少的时候，分析和描述也不复杂，因此，在过去的纯分析研究中，大量的精力集中在如何更好的获得数据上面；而分析的应用方面，则精力集中在如何从对体系的描述中发现新的知识，建立新的模型上面。比如说获得了诺贝尔奖的MALDI离子源，就是解决了质谱如何获取生物大分子质量数的问题。</p>
+<p>但是，随着分析技术的进步，从观测数据到知识之间的桥梁变得不那么好走了。这主要是两个方面的原因造成的，一是随着分析方法和分析仪器的进步，单位时间获取的数据量大大增加了。过去我们拍摄一张荧光成像的图片，显示了被标记的物种在某个时刻在体系中的空间分布情况，我们是可以简单的对其进行分析的；但是现在，在笔者的实验中，拍摄的随时间变化的荧光时序图像，由于采用了高速的和高灵敏度的EMCCD，因此在一个下午的时间里，2~3份样品就将产生大约六万帧的图像，占用约50GB储存空间。在这样的情况下，完全无法通过传统的定性分析的方法人工的来全面的理解和描述获得的实验信息。第二个原因是我们研究的体系变得更加的复杂了，简单的体系中，我们关注的物质种类单一，且认为不同的物种之间是相互独立的，如果有相互作用，那么这种作用是线性的和决定性的，可以简单描述的。例如我们分析一份环境样本，想要获取其中几种农药含量，这样的体系就是简单的，因为每一种农药的情况都单一的对应一个质谱峰的强度；且不同的质谱峰之间互不干扰，这样的分析是经典的化学分析的内容。但是，当面对复杂的体系的时候，我们就没有办法如此直观的获得一一对应的相关性信息。譬如说，我们现在想要研究的是药物对细胞的刺激作用，当然，如果刺激的作用很强烈，那么就只有杀死细胞和细胞存活的差异。 但是，如果药物对细胞的状态产生了影响，但这种影响只是改变了细胞的生活方式，而并没有杀死细胞，这样的情况下问题就非常多了。如何观测细胞状态的变化？细胞的状态与那些可以被观测的量相关？如何定量的描述这种变化等等。研究体系的复杂化以及研究问题的精细化，导致我们很难再像以前一样直观的从数据中获得结论了，因此必须更好的利用“从数据中提取信息，进行描述和分析”这个桥梁的作用，帮助我们从复杂的自然想象中获取有益的信息。</p>
+<p>那么如何更好的利用这个桥梁呢？或者说，如何从大量的，复杂的数据中，提取我们想要的信息，进行定量化的描述和分析呢？机器学习的方法无疑是很重要的方法（但不是唯一的方法）。</p>
+<h3 id="机器学习中的基本概念"><a href="#机器学习中的基本概念" class="headerlink" title="机器学习中的基本概念"></a>机器学习中的基本概念</h3><h4 id="机器学习的任务"><a href="#机器学习的任务" class="headerlink" title="机器学习的任务"></a>机器学习的任务</h4><p>机器学习的任务，也就是大家使用机器学习的目的，大致上可以有 <strong>分类与预测</strong>，<strong>关联性分析</strong>等内容。<br><strong>分类与预测</strong>是机器学习最常见的用途。实际上，分析的目的常常与分类有关，有些是二分类问题：如一份河水样本是不是有机物超标？一个细胞是否是活细胞？一个生物样本是否是来自于猪的？这些都是传统的二分类问题。当我们的结论与信号之间的很强的关联性的时候，这个事情并不需要机器学习来做：河水中还原性物质给了高锰酸钾x个电子每毫升以上就是有机物超标；细胞质区域被不能跨膜的染料染上颜色就说明细胞已经死亡；DNA电泳中出现了特征的条带就说明样本来源是猪等等。但是，正如上面所说的，如果需要研究的问题更为深入和精细的时候，我们就很难将结论与直接观测的数据相联系了，比如，一个细胞是否是癌细胞？如果是，是哪一种癌细胞？一个细菌是否是耐药的？如果是，耐哪一种类型的药物？我们直接能够观测的量没有一个能想前面所说的那样给我们直接的结论，综合多个不同观测变量的结果，给出一个单一的分类标签的过程，就是机器学习中的分类。之所以成为机器学习，主要是因为我们在生活中大部分时间都会做这件事：比如我们第一次遇到一个人，我们的大脑就可以根据这个人的衣着，相貌，举止，语言等多个因素给出一个综合的评价——第一印象是好还是坏；这就是我们大脑作出的二分类问题。预测问题就是给定一个未知结果的观测结果，根据以前的学习结果，预测这个观测结果属于的类别。<br><strong>关联性分析</strong>则是为了回答这样的一个问题，一个观测的结果与众多的不同的观测值之间的关系是什么。尽管学习的方法可以对数百上千的观测值进行综合给出一个单一的结果，但是我们人类还是希望知道，这个结果主要是由哪些因素影响的。这与后面的解释，建模以及预测直接相关。因此也是科学领域内非常重要的一步。</p>
+<h4 id="样本，特征与分类器"><a href="#样本，特征与分类器" class="headerlink" title="样本，特征与分类器"></a>样本，特征与分类器</h4><p>机器学习中一个观测的对象称为一个样本，每个观测的指标称为一个特征，对观测结果进行综合和预测的一组参数成为模型或者分类器。 上面的概念非常抽象，我们可以举一个很简单的例子来说明。譬如我们给实验室采购电脑，需要选择买哪些电脑来给大家来用。买电脑这种事情还是有点复杂的，对于每一个品牌和型号的电脑，实际上就是我们观测的一个对象，也就是一个样本。 我们观测的指标很简单，一个是CPU的计算能力，可以用benchmark来量化表示；另一个就是电脑的价格，可以用人民币为单位进行表示。这里的CPU benchmark和价格就是我们观测的两个特征。对于每一个样本（电脑型号），都可以获得这两个特征。分类器的作用就是根据这两个特征来作出决策，买还是不买这个品牌的电脑。<br>那么怎么理解分类器就是一组参数呢？因为机器学习需要处理的问题来自各个不同的领域，永远也无法穷举出来每个领域的专家模型（也就是对这个领域有深厚了解的专家的决策规则）。因此机器学习算法仅仅是一系列抽象的计算方法，而面对不同领域和不同的数据集的时候，同样的一个算法实际上还是同样设定好的分析规则。所不同的是执行这个规则的参数不同。什么样的参数最适合做一个特定领域的分析和预测呢？这个就是通过这个领域的历史数据来进行学习的<br>还回到买电脑的故事里面。我们怎么知道什么样的电脑才适合实验室买呢？我们可以找出来过去实验室买电脑的记录，其中已经购买的电脑的CPU benchmark以及当时的价格我们都是可以获得的；同时我们也可以看看当时考虑了但是没有买的电脑的相关特征。我们知道过去的决策中关注的样本，特征与最终结果，就可以训练一个分类器来帮我们预测当前的那些电脑型号适合实验室购买。<br>刚才我们说，一个机器学习算法就是一个通用的计算规则。比如我们这里找到了一个简单的算法，那就是价格在某个区间中的时候，CPU benchmark达到一定数值，就会被购买。这个规则就是一个简单的机器学习模型。那么价格具体要在哪个范围呢？CPU benchmark要高过哪个阈值才会购买呢？这些参数与就是需要通过从历史数据中计算确定得到的。这些参数算出来以后，这个规则和参数就形成了一个分类器，帮助我们确定一个新的品牌的电脑是否值得购买。<br>那么上述的机器学习算法的抽象就是这样的一组规则：特征1（例子中为价格）需要同时满足大于参数$\alpha$，小于参数$\beta$，以及特征2需要大于参数$\gamma$的情况下，就输出结果1，否则输出结果2. 一个具体应用的模型就是由一组具体($\alpha_0$, $\beta_0$, $\gamma_0$)确定的规则。</p>
+<h4 id="有监督的学习和无监督的学习"><a href="#有监督的学习和无监督的学习" class="headerlink" title="有监督的学习和无监督的学习"></a>有监督的学习和无监督的学习</h4><p>上面描述的例子中，学习是通过历史决策数据完成的。这样的机器学习算法成为有监督的机器学习算法。也就是说过去的决策数据作为真实值，指导了算法的优化和评价过程。但是，实际工作中，历史决策数据可能是很难获取到的。更重要的是，有监督的情况是建立在我们对需要做的事情非常清楚的情况下。但是，在研究中我们有的时候希望从大量的数据中看到差异性，再从差异性入手挖掘新的未知的知识，这个时候，无监督的学习方法也就变得很重要了。<br>还是上面的买电脑的例子。假如现在实验室刚刚建立，还没有过去买电脑的历史。于是导师跟你说，你调研总结一下市场上在售的电脑都有哪些不同的类型，我们选一个类型来买。这个需求中提到的【调研总结一下市场上在售的电脑都有哪些不同的类型】就是一个非常不明确的需求，我们作为非计算机销售的专家，并不知道在售有哪几种类型的电脑；也不知道每一种类型的电脑都是什么样子的。但是，我们可以使用无监督的学习方法，从在售电脑数据中学习到这些东西。<br>无监督学习的主要应用就是聚类。所谓聚类就是对于一个有大量不同样本的数据集，根据样本之间的相似度，将彼此相似的样本聚为一类；彼此不同的样本分开为不同的类。最终给出的结果就是每一个样本属于的类别。我们再观察每一个类别的平均状况，就可以知道大概每一个类别都是什么情况。无监督学习判断两个样本的差异性就是通过他们的特征值计算得到的。不同的相似度计算方法成为不同的【度量】。度量选择的不同也会导致分类结果的不同，这是因为无监督学习既然是【无监督】的，它其实不懂对错，只是完美的根据【相似的在一起；不同的不在一起】的规则去工作，至于最后的结果是否有意义，就让人来决定吧。举一个例子，现在我们有一群人要进行分类；如果选择【性别】作为度量，那么就会分成【男人】和【女人】两类。如果根据年龄来作为度量，分类的结果就是老年和少年。无监督的学习方法没有变，规则也没有变，但是分类的结果变了，这是度量发生改变的结果。<br>回到原来的例子，使用无监督的学习方法，我们将收集来的市场上在售的电脑分成了四类。我们观察每一类的平均情况，发现有一类是价格高，CPU benchmark低的电脑，原来是商务笔记本；有一类价格高，benchmark也高的，原来是游戏本；有一类价格低，benchmark也低的，原来是低端本；还有一类价格低但是benchmark高的，原来是二手本。</p>
+<h4 id="机器学习与物理模型"><a href="#机器学习与物理模型" class="headerlink" title="机器学习与物理模型"></a>机器学习与物理模型</h4><p>上面谈到，机器学习的方法是普适性的，而非是领域相关的专家知识的集合。相反的，物理模型则完全是通过领域内专家通过专业知识推导得到的结果。我们说机器学习这个东西并不新鲜，在过去已经经历多次起落。当它衰落的时候，也就是对应的专家模型应用广泛的时候。因此，这两种东西实际上是相互竞争又相互启发的。 机器学习在过去衰落的原因主要是计算能力不够，数据量不够或者算法不好导致的应用效果差。对于科学研究上来说，机器学习还有一个先天的劣势，就是即时机器学习给出了很好的预测或者聚类结果，我们却无法从科学本质上的了解其中的因果关系。尽管通过关联分析和重要特征的提取可以改善这一问题（因为特征一般是有具体意义的观测值），但仍然不如物理模型来的直接和易于解释。机器学习也因为其黑匣子的特征，大部分的应用于商业。对于科学研究来说，黑匣子是不够的。<br>但是我们上面说，机器学习与物理模型也有相辅相成的关系。这也是当前科学研究中的新型热点。物理模型的建立过程中天然的带有人对于体系本身的规则的假设，也就是模型的预设条件。但是，对于上面说的复杂的多因素相互作用的系统，尤其是缺乏先验知识的未被探索的科学领域，建立的模型常常是不完整的，有偏差的甚至是错误的。当下甚至更有激进的观点认为，因果关系的科学主要是建立在牛顿力学的观念上的近现代科学研究体系。在面对复杂的，相互作用相互关联的系统是，因果关系可能是没有意义的。比如说，你说我是因为胖才不爱运动的呢？还是因为不爱运动才变胖的呢？这两个系统变量的变化是相互关联相互反馈的，因此因果之说就变得缥缈。遗憾的是，这样的系统在生物学，社会学等等重要领域都是广泛存在的，以至于让我们认为开始觉得过去研究的简单的相互独立的体系才是复杂的相互关联的体系的海洋中的孤岛。因此，这对我们是挑战也是机遇。<br>物理模型与机器学习的关系也是相辅相成的。我们谈到机器学习中需要对样本进行定量的描述，形成样本的特征，这个特征怎么来的呢？很大一部分就是通过物理模型计算出来的。比如在我的研究中，对于单个粒子在一段时间的运动行为，有一个重要的描述特征就是在这个区间的局部扩散系数。扩散系数是怎么计算的呢？就是基于爱因斯坦的自由扩散物理模型计算的。<br>爱因斯坦的自由扩散模型中的假设是粒子运动在均一稳定的粘性溶液中；因此粒子在扩散过程中，只要统计的量足够完备，应该扩散系数是处处相同的，运动行为的概率统计也应该是相同的。但是在观测实际的体系中，我们发现很多与生物复杂粘弹性的细胞质作用的粒子，表现出与空间和时间相关的运动行为，通过机器学习的方法，我们可以得到不同运动行为的时间和空间的分布。这样的结果反过来又可以刺激新的物理模型的产生。因为机器学习的方法，尤其是无监督的方法，并没有带入先验的人为假设，因此更适用于新知识的发现。数据驱动的知识挖掘也是非常热的商业和科学课题。</p>
+<h3 id="生物化学基础研究，应用与机器学习"><a href="#生物化学基础研究，应用与机器学习" class="headerlink" title="生物化学基础研究，应用与机器学习"></a>生物化学基础研究，应用与机器学习</h3><p>前面谈了很多虚的东西，这里进入主题。生物化学的研究范围非常广阔，涉及的话题又纷繁复杂，并不是我这一篇文章能够说清楚的事情。 这里仅仅是从分析化学的角度谈其中很小的一部分。分析化学在生物化学上的研究和应用就是文章开头谈到的对观测体系进行定量的观测和描述。 过去，分析化学大量的研究了简单的，线性的体系，上面提到的如农药检测等就是经典的简单线性系统。 在研究这类系统的时候，最重要的问题是提高检测的范围，精确性和最低检出量。但是随着科学的进步，人们越来越多的关注到了复杂的非线性的系统。尽管这类系统实在是很多，但是真正能够确定性的，可重复性的研究的体系，还是一些生物体系。这是因为，如细胞，生物个体等研究体系可以通过标准化的培养发育大量的可重复的提供实验材料。更多的社会学，生态学和天文学问题，研究体系的时间尺度远远大于生物学实验，因此数据的积累和实验重复性，对照实验的设计等方面都会有所限制。更重要的是，对生物体系的了解直接关系人类永恒的需求——健康，因此生物学的研究如此火热也不难理解。<br>分析化学在生物学当中的应用非常广泛，可以说，分析手段是绝大多数生物学实验的基础。分析化学手段为生物学的研究提供了定量的基础。在研究参照之间存在单一的，显著性差异的时候，定性分析仍然适用（如跑胶看条带的深浅）；在研究参照之间存在单一的，但是仅仅是统计学意义上的显著差异时，定量分析为统计学计算提供了支持；在研究参照之间存在多变量的复杂的相互关系的时候，更多的计算方法就需要运用进去，将数据中的差异提取出来。 机器学习的方法无疑是一种重要的分析手段；其他的，建立在物理模型和假设上的特殊领域算法，时序分析等等也包括在内。<br>前面说了，既然使用数据分析方法的数据本身对于人的定性直觉来讲，太过复杂，那么就会遇到一个直接的问题，就是当分析结果与预期差距很大的时候，或者说结果“不好”的时候，我们如何确定是数据上的问题，还是计算方法上的问题？<br>最常用的方法是使用模拟数据来对算法进行评估。模拟数据的好处是我们本身对模拟所用的数学模型，条件以及基本参数非常了解，这些模拟的基本参数可以当做真实值来与算法的结果作对照，从而评估算法的准确性以及误差范围。如果通过这样的方式确定下来算法是准确的，那么当分析结果与预期有差异的时候，算法的因素就被排除了。<br>除了算法本身正确性的问题以外，还有一个重要的方面是算法本身是否能够揭示你需要的信息。这一点上，需要研究人员至少要对所使用的算法有基本性的了解，否则的话就是胡乱尝试，出了问题也无从下手改进。不同的算法所着重的点是不同的，好比我们看待一样事物有不同的角度一样。如果想要知道苹果的好坏，“尝一口”这个算法将得到口味的结果，对于区别好坏苹果很有帮助；反过来【称重】这个算法只能得到质量数据，很可能发现好苹果和坏苹果没有什么差异。在机器学习在生物化学的领域应用中，在特征的提取上以及算法的选用上，研究人员需要考虑数据的天然属性，机器学习算法的特性以及处理的目标，综合的选择合适的算法。当然，上述的要求实际上是比较高的，通常情况下我们可以先尝试文献中已经报道的方法或者实验室已有的成熟的方法入手。但是归根结底最重要的是，不能期望一劳永逸的用一套算法处理所有的数据且能获得预期的成果；也不建议计算结果不理想就直接重新做实验。还是要将实验数据和算法结果相互不断比对和印证，逐步有针对性的获得理想的结果。</p>
+<h3 id="常见的数据种类与学习方法"><a href="#常见的数据种类与学习方法" class="headerlink" title="常见的数据种类与学习方法"></a>常见的数据种类与学习方法</h3><p>分析化学实验常用的数据类型有图像数据和谱图数据，在此处分开来讲。<br>图像数据的来源有显微成像和质谱成像。总体而言，图像数据表现的是物质在空间上的分布信息。图像数据中一个像素点对应一个空间位置，这个像素点的值对应这个位置的信号强度，图像数据本质上就是按照空间位置对应的一个数值矩阵。图像数据的处理非常之多，最为常见的是提高图像质量的降噪，滤波，调节对比度，边缘增强等等；还有识别目标的需求，如特殊物体的自动识别;也有数值分析的需求，如分析某个区域的强度均值等。<br>科学研究中的图像数据通常有TIF格式，TIF格式全称(Tag Image File Format), 是具有标签的无压缩的数据文件格式。其中的标签既可以描述图像本身的信息，也可以描述获取数据的仪器，软件等信息。TIF格式的无压缩特性使得它适合作为科学图像数据格式。计算机在保存图片的时候常常需要将像素的值归一化到一个范围区间内，如8 bit的TIF文件每一个像素的数值就是0~255。对于科学数据来说，并不一定原始信号就与TIF格式的要求相同，在这种情况下，会使用线性变幻将原始数据变换到需要的数值区域，这个过程中可能造成信息的损失。<br>另一个更为麻烦的数据格式是Text Image，如名称所示，这种格式中所有像素的值是按照一定的顺序写在一个txt文档中的，因此是没有信号值域的范围的，因此最大的保留的原始数据。但是这种数据在读取和保存的时候，涉及到数值与字符的相互转换以及显示的时候的数值变换，因此读取和保存的速度较慢。对于看重图像不同区域之间的强度比率的情况，适合使用TIF保存数据；对于看重具体信号强度的情况，适合保存为text image的形式。<br>PNG格式是常见的压缩格式，但是质量也是比较好的，因此与TIF格式一样适合作为发表文章时用的数据格式。<br>向量图通常是软件输出或者人工制作的用于发表文献用的展示用格式，非常重要，但是与数据处理无关，在此就不多说了。<br>说完图像数据常见的类型，那么对于图像数据常见的处理都有哪些呢？前面提到，图像数据的本质上是一个数值矩阵。空间信号处理的方式如二维傅里叶变换等处理方式广泛的应用于图像的信号处理（SIM），降噪等方面。目标识别目前有两种路径。简单的目标识别（如单个圆形颗粒等）可以使用数值方法如最大值寻找，边缘扩展等等方法。复杂的目标识别通常是计算机领域的工作，目前流行使用神经网络的方法。图像数据也可以作为机器学习的样本。最为简单的特征提取方式就是认为每一个像素点就是一个特征，像素点的数值就是特征的值。这样，一张100像素x100像素的图像作为一个样本，就有一万个不同的特征。特征还需要对齐，也就是在相同位置的特征需要表达相同的物理意义。前面提到机器学习中非常重要的相似度计算，就是分别计算对应位置的特征值差异获得的；因此如果物理意义都不想同，计算就没有意义了。<br>除了图像数据，最为常见还有谱图数据。谱图数据与图像数据类似，表达的是信号在不同波谱频域中的强度分布。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/HansenZhao.github.io/tags/MATLAB/" rel="tag"># MATLAB</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HansenZhao.github.io/2017/12/03/Fun-with-your-first-Day-with-Matlab-S01E04/" rel="next" title="Fun with your first daty with Matlab S01E04">
+                <i class="fa fa-chevron-left"></i> Fun with your first daty with Matlab S01E04
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2131335" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/HansenZhao.github.io/images/zhs.png"
+                alt="Hansen Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Hansen Zhao</p>
+              <p class="site-description motion-element" itemprop="description">Machine Learning & Coding</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/HansenZhao.github.io/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/HansenZhao.github.io/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/HansenZhao" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="zhaohs12@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习中的基本概念"><span class="nav-number">2.</span> <span class="nav-text">机器学习中的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习的任务"><span class="nav-number">2.1.</span> <span class="nav-text">机器学习的任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本，特征与分类器"><span class="nav-number">2.2.</span> <span class="nav-text">样本，特征与分类器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有监督的学习和无监督的学习"><span class="nav-number">2.3.</span> <span class="nav-text">有监督的学习和无监督的学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习与物理模型"><span class="nav-number">2.4.</span> <span class="nav-text">机器学习与物理模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生物化学基础研究，应用与机器学习"><span class="nav-number">3.</span> <span class="nav-text">生物化学基础研究，应用与机器学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的数据种类与学习方法"><span class="nav-number">4.</span> <span class="nav-text">常见的数据种类与学习方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hansen Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/HansenZhao.github.io/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
