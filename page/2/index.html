@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,16 @@
 
 
 
-<meta name="description" content="作者：赵瀚森  zhaohs12@163.com如需引用，请注明出处 &amp;emsp;&amp;emsp;随着大数据的火热，机器学习这类“专业”的词汇也逐渐成为程序员和普通吃瓜群众时常听到的词汇。机器学习，这个词不是很好懂，机器学习什么呢？这篇文章我尝试从自己学习和实践的角度做一些“科普”。 什么是学习&amp;emsp;&amp;emsp;通常我们说人的学习，是指获取解决一类问题的能力的过程。这个问题可以是具体的，一道数学">
-<meta name="keywords" content="机器学习">
-<meta property="og:type" content="article">
-<meta property="og:title" content="漫谈机器学习">
-<meta property="og:url" content="https://hansenzhao.github.io/2017/04/15/漫谈机器学习/index.html">
+<meta name="description" content="Machine Learning &amp; Coding">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HansenZhao&#39;s Blog">
+<meta property="og:url" content="https://hansenzhao.github.io/page/2/index.html">
 <meta property="og:site_name" content="HansenZhao&#39;s Blog">
-<meta property="og:description" content="作者：赵瀚森  zhaohs12@163.com如需引用，请注明出处 &amp;emsp;&amp;emsp;随着大数据的火热，机器学习这类“专业”的词汇也逐渐成为程序员和普通吃瓜群众时常听到的词汇。机器学习，这个词不是很好懂，机器学习什么呢？这篇文章我尝试从自己学习和实践的角度做一些“科普”。 什么是学习&amp;emsp;&amp;emsp;通常我们说人的学习，是指获取解决一类问题的能力的过程。这个问题可以是具体的，一道数学">
+<meta property="og:description" content="Machine Learning &amp; Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-04-18T02:37:09.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="漫谈机器学习">
-<meta name="twitter:description" content="作者：赵瀚森  zhaohs12@163.com如需引用，请注明出处 &amp;emsp;&amp;emsp;随着大数据的火热，机器学习这类“专业”的词汇也逐渐成为程序员和普通吃瓜群众时常听到的词汇。机器学习，这个词不是很好懂，机器学习什么呢？这篇文章我尝试从自己学习和实践的角度做一些“科普”。 什么是学习&amp;emsp;&amp;emsp;通常我们说人的学习，是指获取解决一类问题的能力的过程。这个问题可以是具体的，一道数学">
+<meta name="twitter:title" content="HansenZhao&#39;s Blog">
+<meta name="twitter:description" content="Machine Learning &amp; Coding">
 
 
 
@@ -120,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://hansenzhao.github.io/2017/04/15/漫谈机器学习/"/>
+  <link rel="canonical" href="https://hansenzhao.github.io/page/2/"/>
 
 
 
 
 
-  <title>漫谈机器学习 | HansenZhao's Blog</title>
+  <title>HansenZhao's Blog</title>
   
 
 
@@ -145,7 +143,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,9 +227,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -260,7 +259,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">漫谈机器学习</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HansenZhao.github.io/2017/04/15/漫谈机器学习/" itemprop="url">漫谈机器学习</a></h1>
         
 
         <div class="post-meta">
@@ -343,7 +344,9 @@
       
 
       
-        <p>作者：赵瀚森  zhaohs12@163.com<br>如需引用，请注明出处</p>
+        
+          
+            <p>作者：赵瀚森  zhaohs12@163.com<br>如需引用，请注明出处</p>
 <p>&emsp;&emsp;随着大数据的火热，机器学习这类“专业”的词汇也逐渐成为程序员和普通吃瓜群众时常听到的词汇。机器学习，这个词不是很好懂，机器学习什么呢？这篇文章我尝试从自己学习和实践的角度做一些“科普”。</p>
 <h2 id="什么是学习"><a href="#什么是学习" class="headerlink" title="什么是学习"></a>什么是学习</h2><p>&emsp;&emsp;通常我们说人的学习，是指获取解决一类问题的能力的过程。这个问题可以是具体的，一道数学题，做一道菜等等。也可以是抽象的，比如如何与他人打交道等。但是机器（也就是计算机）其实学不了这么高级的东西，尽管近来新的成果可以让机器生成特殊风格的图片，产生以假乱真的手写字体等等功能，但本质上这些技术中计算机执行的逻辑还是程序员事先设定好的，也就是<strong>按照特定的顺序和逻辑完成工作</strong>这一件事是程序员决定的，目前计算机还不能学习。<br>&emsp;&emsp;那么计算机到底学习了什么呢？实际上机器学习里面很多时候我们都是在做分类问题。所谓分类问题就是经过学习（更专业的叫做训练）的程序（分类器）可以对数据进行某种评价，我们计算机做的这一系列的事情：训练——评价——应用 为机器学习。在<a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="external">wiki</a>上，是这样表述的：</p>
 <blockquote>
@@ -367,6 +370,8 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>&emsp;&emsp;我们人的大脑通过长时间的进化，获得了一秒钟判断一个人是美是丑的强悍能力，在这个方面，机器还远远比不过人类。但是在人类不擅长的指纹信息、贷款信息、生物学中的基因序列、蛋白表达总量，分析化学中的样品质谱等等领域，机器在分类、发现和识别特定的模式方面已经超越了人类。也正是因为这样，人类在刑侦案件，商业决策，科学研究中越来越注重数据的处理和挖掘，“大数据”的概念才越来越火。<br>&emsp;&emsp;机器学习并不是一个新鲜的概念，在文章的开头，我们可以看到1959年就有相关的论述了。今天，它受到这样的重视，除了计算能力的提升使得机器学习的算法获得了更好的表现以外，也有信息化在各行各业的发展导致的数据量激增的缘故。如何从这些数据中挖掘更多有意义的信息，指导我们更好的生产和研究，是我们关心的问题。而机器学习，正是解决这个问题利器。<br>&emsp;&emsp;当然，数据量的激增也为储存和处理这些信息带来得了巨大的挑战，这里面的事情，我们有时间再说吧！</p>
 <p>2017/4/16  凌晨1点</p>
 
+          
+        
       
     </div>
     
@@ -381,36 +386,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/HansenZhao.github.io/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/HansenZhao.github.io/2017/04/20/三面骰/" rel="prev" title="三面骰">
-                三面骰 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -420,37 +403,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/HansenZhao.github.io/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/HansenZhao.github.io/">1</a><span class="page-number current">2</span>
+  </nav>
 
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2131335" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-      
-    </div>
-  </div>
 
 
           </div>
@@ -458,10 +418,6 @@ var jiathis_config={
 
 
           
-
-  
-
-
 
         </div>
         
@@ -482,17 +438,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -572,22 +519,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是学习"><span class="nav-number">1.</span> <span class="nav-text">什么是学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是数据"><span class="nav-number">2.</span> <span class="nav-text">什么是数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数据的学习和预测"><span class="nav-number">3.</span> <span class="nav-text">对数据的学习和预测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个例子"><span class="nav-number">3.1.</span> <span class="nav-text">一个例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有监督的学习"><span class="nav-number">3.2.</span> <span class="nav-text">有监督的学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无监督的学习"><span class="nav-number">3.3.</span> <span class="nav-text">无监督的学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多维的学习"><span class="nav-number">3.4.</span> <span class="nav-text">多维的学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -721,10 +652,6 @@ var jiathis_config={
   
 
   
-  <script type="text/javascript" src="/HansenZhao.github.io/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/HansenZhao.github.io/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 
