@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/HansenZhao.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/HansenZhao.github.io/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/HansenZhao.github.io/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/HansenZhao.github.io/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/HansenZhao.github.io/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/HansenZhao.github.io/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MATLAB," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="元胞自动机模拟程序元胞自动机是复杂系统研究的经典模型。直至今天，仍然引起研究者的广泛兴趣。大名鼎鼎的“生命游戏”也是元胞自动机的一种。这种模型生动的展示了即时简单的规则的组合也能在不断的演化中产生复杂的行为。这一现象的发现人，mathmatica软件的开发者Stephen Wolfram在他写的畅销书中盛赞这种体系是新科学（A new kind of science)的开端。尽管元胞自动机看起来逼">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fun with your first daty with Matlab S02E01">
+<meta property="og:url" content="https://hansenzhao.github.io/2018/03/08/Fun-with-your-first-Day-with-Matlab-S02E01/index.html">
+<meta property="og:site_name" content="HansenZhao&#39;s Blog">
+<meta property="og:description" content="元胞自动机模拟程序元胞自动机是复杂系统研究的经典模型。直至今天，仍然引起研究者的广泛兴趣。大名鼎鼎的“生命游戏”也是元胞自动机的一种。这种模型生动的展示了即时简单的规则的组合也能在不断的演化中产生复杂的行为。这一现象的发现人，mathmatica软件的开发者Stephen Wolfram在他写的畅销书中盛赞这种体系是新科学（A new kind of science)的开端。尽管元胞自动机看起来逼">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oyeuye83q.bkt.clouddn.com/18-3-8/89773590.jpg">
+<meta property="og:image" content="http://oyeuye83q.bkt.clouddn.com/18-3-8/48934686.jpg">
+<meta property="og:image" content="http://oyeuye83q.bkt.clouddn.com/18-3-8/87004660.jpg">
+<meta property="og:updated_time" content="2018-03-08T14:02:39.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fun with your first daty with Matlab S02E01">
+<meta name="twitter:description" content="元胞自动机模拟程序元胞自动机是复杂系统研究的经典模型。直至今天，仍然引起研究者的广泛兴趣。大名鼎鼎的“生命游戏”也是元胞自动机的一种。这种模型生动的展示了即时简单的规则的组合也能在不断的演化中产生复杂的行为。这一现象的发现人，mathmatica软件的开发者Stephen Wolfram在他写的畅销书中盛赞这种体系是新科学（A new kind of science)的开端。尽管元胞自动机看起来逼">
+<meta name="twitter:image" content="http://oyeuye83q.bkt.clouddn.com/18-3-8/89773590.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/HansenZhao.github.io/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hansenzhao.github.io/2018/03/08/Fun-with-your-first-Day-with-Matlab-S02E01/"/>
+
+
+
+
+
+  <title>Fun with your first daty with Matlab S02E01 | HansenZhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/HansenZhao.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HansenZhao's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Share with ZhuangBiology</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/HansenZhao.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/HansenZhao.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/HansenZhao.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hansenzhao.github.io/HansenZhao.github.io/2018/03/08/Fun-with-your-first-Day-with-Matlab-S02E01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hansen Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/HansenZhao.github.io/images/zhs.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HansenZhao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Fun with your first daty with Matlab S02E01</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T20:00:00+08:00">
+                2018-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HansenZhao.github.io/categories/日志/MATLAB/" itemprop="url" rel="index">
+                    <span itemprop="name">MATLAB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="元胞自动机模拟程序"><a href="#元胞自动机模拟程序" class="headerlink" title="元胞自动机模拟程序"></a>元胞自动机模拟程序</h2><p>元胞自动机是复杂系统研究的经典模型。直至今天，仍然引起研究者的广泛兴趣。大名鼎鼎的“生命游戏”也是元胞自动机的一种。这种模型生动的展示了即时简单的规则的组合也能在不断的演化中产生复杂的行为。这一现象的发现人，mathmatica软件的开发者Stephen Wolfram在他写的<a href="http://www.wolframscience.com/nks/" target="_blank" rel="external">畅销书</a>中盛赞这种体系是新科学（A new kind of science)的开端。<br>尽管元胞自动机看起来逼格满满，实际上非常简单。我们可以使用MATLAB轻而易举的编写一个元胞自动机模拟的软件。<br>本文的最终程序请见 <a href="https://github.com/HansenZhao/HSToolkit/blob/master/cellularAuto.m" target="_blank" rel="external">Github</a></p>
+<h3 id="元胞自动机的原理"><a href="#元胞自动机的原理" class="headerlink" title="元胞自动机的原理"></a>元胞自动机的原理</h3><p>本文仅介绍一维元胞自动机的原理，了解以后，拓展到更高维度就很容易了。<br>首先，所谓元胞，是指在一个模拟的空间中生成彼此相邻的格子，每一个格子都代表一个元胞。每一个元胞都有两个状态——生或者死，也即0或者1。元胞的状态随着时间变化，下一个回合每个元胞的状态取决于上一个回合这个元胞的状态以及其相邻的元胞状态。我们可以看到，元胞自动机在时间上和空间上都是离散的。<a href="http://mp.weixin.qq.com/s/i5x4J7806n9whTEuD5nFiQ" target="_blank" rel="external">现代科学的研究</a>也支持我们生活的世界在极为微小的尺度上是离散的而非连续的,难怪Wolfram要在自己写的书中洋洋得意了。<br>元胞自动成为复杂系统研究的经典模型还有一大因素，就是它在最简单的体系中表达了复杂系统的共性特征：相互作用个体通过简单的规则，形成复杂的整体行为<br>元胞自动机的规则就是前面提到的，下一个回合的状态是如何由上一个时刻的状态决定的。我们知道，影响下一个回合的某个元胞的状态的因素有两个：这个元胞本身状态以及其左邻右舍的状态。那么，所有可能的状态有几个呢？因为我们只考虑紧密相邻的元胞之间的相互影响，因此实际上是三个相邻的元胞状态决定下一个回合的某个元胞的状态。由于每个元胞的状态只有0和1两种情况，因此只有$2^{3}$八种可能的状态。对于八种可能的原始状态，我们完全可以枚举可能的下一个回合的状态，因此对应于每一种原始状态，在规则设定上，下一个回合都有可能是0或者1，因此规则的个数一共有$2^{8}=256$中可能的规则。<br>例如我们可以设定某一个规则，对于上一回合任何情况，除非三个相邻的元胞自动机都为0时，下一个时刻的元胞才为0。否则，下一个时刻的元胞状态为1。我们可以通过表格表示这个规则：</p>
+<table>
+<thead>
+<tr>
+<th>上一回合状态</th>
+<th style="text-align:center">111</th>
+<th style="text-align:center">110</th>
+<th style="text-align:center">101</th>
+<th style="text-align:center">100</th>
+<th style="text-align:center">011</th>
+<th style="text-align:center">010</th>
+<th style="text-align:center">001</th>
+<th style="text-align:right">000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下一回合状态</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<p>我们约定在写这张表的时候，上一个时刻的状态组合按照二进制的大小顺序来书写，因此在上面的表格中，上一个回合的状态分别的$7<em>{(2)}$（也就是二进制的111转换为十进制为7）,$6</em>{(2)},5<em>{(2)},4</em>{(2)},3<em>{(2)},2</em>{(2)},1<em>{(2)},0</em>{(2)}$八个二进制数字。下面的状态组合，形成一个八位的二进制数字$1111 1110$。这个二进制数字是多少呢？254。因此，这个规则就被称为254规则。 在Wolfram书中，这个规则有一个很形象的表示：<br><img src="http://oyeuye83q.bkt.clouddn.com/18-3-8/89773590.jpg" alt=""><br>我们可以使用一个二维数组来表示元胞自动机在每一个回合的状态。数组中的0或者1表示相应元胞的状态，数组的行表示每一代元胞自动机的状态组合，不同的行代表了不同代的交替。这样就可以在二维的平面上表示一维的元胞自动机的演化过程了。</p>
+<h3 id="元胞自动机的MATLAB编程"><a href="#元胞自动机的MATLAB编程" class="headerlink" title="元胞自动机的MATLAB编程"></a>元胞自动机的MATLAB编程</h3><p>首先，我们要确认模拟一个元胞自动机需要哪些参数。首先，模拟时遵循的规则需要给出。其次，模拟的一维世界的长度必须给出，模拟的步数，初始条件也是必要的。除此之外，还有一个重要的参数，就是元胞自动机如何处理边界条件。<br>我们上面讨论的时候，假设了每一个元胞都有两个相邻的邻居。但是模拟的世界大小是有限的，在一维世界的边界处，左边界的元胞没有左邻局；右边界的元胞没有右邻居。应该怎么办呢？常见的解决方法有三种：</p>
+<ul>
+<li>常数补充：将缺失的邻居补充为0或者1</li>
+<li>扩展补充：将缺失的邻居补充为自己本身</li>
+<li>卷曲补充：想象一维世界是一个环，那么左边界的左邻局其实就是右边界，反之亦然。</li>
+</ul>
+<p>因此，我们需要一个参数来设定世界边界的补充方式<br>最后，我们设定一个参数来确定是否模拟完成就把结果显示出来。</p>
+<h4 id="MATLAB中的参数检测"><a href="#MATLAB中的参数检测" class="headerlink" title="MATLAB中的参数检测"></a>MATLAB中的参数检测</h4><p>MATLAB中的函数是输入一个或者几个参数，返回结果的东西。函数相比于脚本，将参数的设置与计算逻辑隔离开来，从而更容易让程序得到复用。MATLAB中的函数的书写格式一般是这样的：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[返回值]</span> = 函数名<span class="params">(参数1，参数2...)</span></span></div><div class="line">    函数体（处理逻辑）</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>其中，函数体的部分与脚本的书写基本一致。返回值的数值在函数体内部被赋值完成。<br>我们前面提到，元胞自动机的参数一共有6个。想象一下如果每次我们用这个函数都需要输入6个参数，是不是很麻烦。因此，我们可以在函数体内对参数的存在与否进行检测，如果用户赋值了，就按照用户的赋值来，如果用户没有赋值，我们就给予默认值。这样的话，用户在不必要的时候就不需要给定赋值了。我们看这部分的代码：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[ histArray ]</span> = <span class="title">cellularAuto</span><span class="params">( rules,len,steps,init,world,isShow )</span></span></div><div class="line">    <span class="comment">% 规则编号</span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'rules'</span>,<span class="string">'var'</span>) <span class="comment">%检查是否存在叫rules的变量，如果没有就赋值为110</span></div><div class="line">        rules = <span class="number">110</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="comment">% 一维世界长度</span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'len'</span>,<span class="string">'var'</span>)</div><div class="line">        len = <span class="number">21</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="comment">% 模拟回合数</span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'steps'</span>,<span class="string">'var'</span>)</div><div class="line">        steps = <span class="number">100</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="comment">% 原始赋值</span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'init'</span>,<span class="string">'var'</span>)</div><div class="line">        init = randi(<span class="number">2</span>,[<span class="number">1</span>,len])<span class="number">-1</span>;</div><div class="line">    <span class="keyword">elseif</span> <span class="built_in">size</span>(init,<span class="number">2</span>)~= len</div><div class="line">        <span class="comment">% 如果原始赋值向量长度与设定一维世界长度不同，报错退出</span></div><div class="line">        error(<span class="string">'Init condition size: %d is not equal to the length: %d\n'</span>,<span class="built_in">size</span>(init,<span class="number">2</span>),len);</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="comment">% 边界处理模式</span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'world'</span>,<span class="string">'var'</span>)</div><div class="line">        world = <span class="string">'zero'</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="comment">% 是否展示结果</span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'isShow'</span>,<span class="string">'var'</span>)</div><div class="line">        isShow = <span class="number">1</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    ..........</div></pre></td></tr></table></figure></p>
+<p>我们命名了一个叫做$cellularAuto$的函数，拥有6个输入参数，1个输出结果$histArray$。这个结果就是上面说的表示元胞自动机演化过程的二维数组。这里使用的是$exist$函数检测是否存在特定的变量。</p>
+<h4 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h4><p>我们首先生成一个矩阵保存结果，同时也是函数的输出值<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">histArray = [init;zeros(steps<span class="number">-1</span>,len)];</div></pre></td></tr></table></figure></p>
+<p>这里直接建立了一个二维数组。数组的第一行是用户指定的或者随机生成的一维01序列；后面的模拟回合数-1行一开始全部填充为0。然后我们对规则进行一定的前处理。前面说到的11111110规则也即254规则是通过将8位的二进制转化为10进制得到的。因此我们在程序中首先要对10进制的规则编号重新转化为原来的8位二进制。我们首先将规则编号转化为8位的数字<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rules = uint8(rules);</div></pre></td></tr></table></figure></p>
+<p>我们将rules通过$uint8$函数转化为了无符号的8位整数。那么，想要取得每一个上一回合组合对应的下一个回合应该的状态，我们可以寻找这个8位整数对应的二进制位的数值。例如，我想知道在这个规则下，上一个回合是111的时候，这个回合应该存在的状态，我们可以寻找这个规则（254规则）的第8位上的数字。如何实现呢？使用的是$bitget$函数。$bitget$函数接受两个参数，第一个参数是一个数字，第二个参数是位的编号。比如我想知道254号的第8位是多少，只需要使用<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bitget(<span class="number">254</span>,<span class="number">8</span>)</div><div class="line"><span class="built_in">ans</span> = <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>即可。其中，第二个参数也可以是矩阵，我们因此可以批量的进行这个操作。另外，这里面还有一点窍门。例如上一个回合的状态是111，那么上一个时刻的状态的10进制表示就是7，正好是对应的检索位数（8）减去1的结果。这个窍门成立的原因就是我们前面严格的约定了规则表格的书写方式。<br>下面，我们可以很简单的想到可以通过一个循环语句来进行模拟，每次模拟一步<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> m = <span class="number">2</span>:<span class="number">1</span>:steps</div><div class="line">    模拟一步......</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>那么每一步怎么模拟呢？我们首先针对world参数的赋值，补全上一个回合的边界状态<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">tmp = histArray(m<span class="number">-1</span>,:); <span class="comment">%将上一个回合的状态取出</span></div><div class="line"><span class="keyword">switch</span> world</div><div class="line">    <span class="keyword">case</span> <span class="string">'zero'</span></div><div class="line">        tmp = [<span class="number">0</span>,tmp,<span class="number">0</span>]; <span class="comment">%边界补0</span></div><div class="line">    <span class="keyword">case</span> <span class="string">'one'</span></div><div class="line">        tmp = [<span class="number">1</span>,tmp,<span class="number">1</span>]; <span class="comment">%边界补1</span></div><div class="line">    <span class="keyword">case</span> <span class="string">'extend'</span></div><div class="line">        tmp = [tmp(<span class="number">1</span>),tmp,tmp(end)]; <span class="comment">%边界扩展</span></div><div class="line">    <span class="keyword">case</span> <span class="string">'wrap'</span></div><div class="line">        tmp = [tmp(end),tmp,tmp(<span class="number">1</span>)]; <span class="comment">%边界卷曲</span></div><div class="line">    <span class="keyword">otherwise</span></div><div class="line">        tmp = [<span class="number">0</span>,tmp,<span class="number">0</span>];</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>由于上一个回合的状态本身就是一个行向量，因此我们补全的过程就是给行向量的头和尾扩展一个元素。这里面使用了一个MATLAB的语法糖（就是语法中为开发者提供的便利语法）。在对向量进行索引的时候，end表示最后一个元素。<br>补充完上一个回合的边界状态以后，我们想要得到每一个对应位置的状态。这个地方比较抽象，我们假设一个简单的情况。例如上一个状态是 1 1 0 1 0，我们采用全0补全以后，变成了0 1 1 0 1 0 0。这是一个1x7的行向量。那么，对应下一个时刻的第一个元胞的状态就是 0 1 1，第二个就是 1 1 0。下一个回合第一个元胞对应上一个时刻【补充以后的元胞组】的索引是1,2,3；第二个就是2,3,4。是不是发现了规律了呢？我们可以直接将上一个时刻补充后元胞状态组1x7的向量转化为3x5的矩阵。其中每一列是对应位置的上一个时刻的状态。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mat = [tmp(<span class="number">1</span>:(end<span class="number">-2</span>));tmp(<span class="number">2</span>:(end<span class="number">-1</span>));tmp(<span class="number">3</span>:end)];</div></pre></td></tr></table></figure></p>
+<p>根据这样的操作，补充后的0 1 1 0 1 0 0数组就会变成这样的一个矩阵</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>看，是不是第一列对应了第一个位置上一回合的状态，第二列对应了第二个位置上一回合的状态？下一步，我们需要从这个矩阵中获取8位规则的索引。上面提到的111的索引是$7+1=8$。实际上，就是$1<em>2^2+1</em>2^1+1*2^0+1=8$因此，我们只要将上面的矩阵的第一列乘以4，第二列乘以2最后一列乘以1最后再每列求和再加1就好。这样的操作就是：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">condition = sum(mat.*<span class="built_in">repmat</span>([<span class="number">4</span>;<span class="number">2</span>;<span class="number">1</span>],<span class="number">1</span>,len))+<span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p>这里的repmat函数将[4;2;1]列向量在重复铺展了1行len这么多列，目的是使得其大小与mat变量大小一致，才能进行按位乘的矩阵操作。最后使用前面说的$bitget$函数查找出来这个时刻应该的状态,就好了，并赋值到histArray的相应位置就好了。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">res = bitget(rules,condition);</div><div class="line">histArray(m,:) = res;</div></pre></td></tr></table></figure></p>
+<p>全部的代码是这样的:<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">[ histArray ]</span> = <span class="title">cellularAuto</span><span class="params">( rules,len,steps,init,world,isShow )</span></span></div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'rules'</span>,<span class="string">'var'</span>)</div><div class="line">        rules = <span class="number">110</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'len'</span>,<span class="string">'var'</span>)</div><div class="line">        len = <span class="number">21</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'steps'</span>,<span class="string">'var'</span>)</div><div class="line">        steps = <span class="number">100</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'init'</span>,<span class="string">'var'</span>)</div><div class="line">        init = randi(<span class="number">2</span>,[<span class="number">1</span>,len])<span class="number">-1</span>;</div><div class="line">    <span class="keyword">elseif</span> <span class="built_in">size</span>(init,<span class="number">2</span>)~= len</div><div class="line">        error(<span class="string">'Init condition size: %d is not equal to the length: %d\n'</span>,<span class="built_in">size</span>(init,<span class="number">2</span>),len);</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'world'</span>,<span class="string">'var'</span>)</div><div class="line">        world = <span class="string">'zero'</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ~exist(<span class="string">'isShow'</span>,<span class="string">'var'</span>)</div><div class="line">        isShow = <span class="number">1</span>;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    histArray = [init;zeros(steps<span class="number">-1</span>,len)];</div><div class="line">    rules = uint8(rules);</div><div class="line">    <span class="keyword">for</span> m = <span class="number">2</span>:<span class="number">1</span>:steps</div><div class="line">        tmp = histArray(m<span class="number">-1</span>,:);</div><div class="line">        <span class="keyword">switch</span> world</div><div class="line">            <span class="keyword">case</span> <span class="string">'zero'</span></div><div class="line">                tmp = [<span class="number">0</span>,tmp,<span class="number">0</span>];</div><div class="line">            <span class="keyword">case</span> <span class="string">'one'</span></div><div class="line">                tmp = [<span class="number">1</span>,tmp,<span class="number">1</span>];</div><div class="line">            <span class="keyword">case</span> <span class="string">'extend'</span></div><div class="line">                tmp = [tmp(<span class="number">1</span>),tmp,tmp(end)];</div><div class="line">            <span class="keyword">case</span> <span class="string">'wrap'</span></div><div class="line">                tmp = [tmp(end),tmp,tmp(<span class="number">1</span>)];</div><div class="line">            <span class="keyword">otherwise</span></div><div class="line">                tmp = [<span class="number">0</span>,tmp,<span class="number">0</span>];</div><div class="line">        <span class="keyword">end</span></div><div class="line">        mat = [tmp(<span class="number">1</span>:(end<span class="number">-2</span>));tmp(<span class="number">2</span>:(end<span class="number">-1</span>));tmp(<span class="number">3</span>:end)];</div><div class="line">        condition = sum(mat.*<span class="built_in">repmat</span>([<span class="number">4</span>;<span class="number">2</span>;<span class="number">1</span>],<span class="number">1</span>,len))+<span class="number">1</span>;</div><div class="line">        res = bitget(rules,condition);</div><div class="line">        histArray(m,:) = res;</div><div class="line">    <span class="keyword">end</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> isShow</div><div class="line">        figure;</div><div class="line">        imagesc(histArray); colormap([<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]);</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h3 id="玩转元胞自动机"><a href="#玩转元胞自动机" class="headerlink" title="玩转元胞自动机"></a>玩转元胞自动机</h3><p>至此，我们的编程也就完了，是不是很简单？我们可以全部使用默认设置玩一下<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cellularAuto; <span class="comment">%无任何参数，全部使用默认值</span></div></pre></td></tr></table></figure></p>
+<p>两次模拟的结果。其中每一行就是一维世界的一个状态，每一列代表一次模拟，由上到下是时间维度。</p>
+<p><img src="http://oyeuye83q.bkt.clouddn.com/18-3-8/48934686.jpg" alt=""></p>
+<p>我们还可以使用110规则模拟一个一万长度的一维世界的一万次变化的结果：</p>
+<p><img src="http://oyeuye83q.bkt.clouddn.com/18-3-8/87004660.jpg" alt=""></p>
+<p>怎么样，很有意思吧！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/HansenZhao.github.io/tags/MATLAB/" rel="tag"># MATLAB</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HansenZhao.github.io/2018/03/06/Notes of A new kind of science-02/" rel="next" title="Notes of A new kind of Science-01">
+                <i class="fa fa-chevron-left"></i> Notes of A new kind of Science-01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2131335" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/HansenZhao.github.io/images/zhs.png"
+                alt="Hansen Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Hansen Zhao</p>
+              <p class="site-description motion-element" itemprop="description">Machine Learning & Coding</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/HansenZhao.github.io/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/HansenZhao.github.io/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/HansenZhao" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="zhaohs12@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#元胞自动机模拟程序"><span class="nav-number">1.</span> <span class="nav-text">元胞自动机模拟程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元胞自动机的原理"><span class="nav-number">1.1.</span> <span class="nav-text">元胞自动机的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元胞自动机的MATLAB编程"><span class="nav-number">1.2.</span> <span class="nav-text">元胞自动机的MATLAB编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MATLAB中的参数检测"><span class="nav-number">1.2.1.</span> <span class="nav-text">MATLAB中的参数检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟"><span class="nav-number">1.2.2.</span> <span class="nav-text">模拟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#玩转元胞自动机"><span class="nav-number">1.3.</span> <span class="nav-text">玩转元胞自动机</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hansen Zhao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HansenZhao.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/HansenZhao.github.io/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/HansenZhao.github.io/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
